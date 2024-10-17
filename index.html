@@ -8,20 +8,48 @@
     <link rel="stylesheet" href="/src/css/style.css">
 </head>
 <body>
-    <main>
-        <!-- Conteúdo do Jogo -->
+    <header>
+        <h1>The Finger's Game</h1>
+
+        <button onclick="scrollToGame()" id="btn-game">Jogo</button>
+        <button onclick="scrollToRules()" id="btn-rules">Rules</button>
+    </header>
+
+    <main id="Game">
+        <div>Player X</div>
+
+        <div></div>
+
+        <div></div>
     </main>
-    <footer>
-        <h1>Regras</h1> <!-- Colocar as Regras -->
-        <ul>
-            <li>Quando uma mão tem 5 dedos, ela é "eliminada", perdendo todos os dedos.</li>
-            <li>Você perde quando não tem mais dedos.</li>
-            <li>O jogo funciona em rodadas de uma única ação cada, onde o jogador que irá iniciar pode ser escolhido da maneira que eles desejarem.</li>
-            <li>A cada rodada há duas jogadas possíveis, adicionar a quantidade de dedos de uma das suas mãos para uma do oponente ou transferir qualquer quantidade de uma das suas mãos para a outra.</li>
-            <li>É inválido fazer movimentos equivalentes a "passar a vez", como por exemplo, em uma situação onde você tem 2 dedos em uma mão e um na outra, você não pode passar um dedo da mão com dois para a com um, porque seria como se você tivesse passado a vez, ou seja, a jogada é irrelevante.</li>
-        </ul>
+
+    <footer id="Rules">
+        <h1>Regras</h1>
+            <div>
+                <ul>
+                    <li>Quando uma mão tem 5 dedos, ela é "eliminada", perdendo todos os dedos.</li>
+                    <li>Você perde quando não tem mais dedos.</li>
+                    <li>O jogo funciona em rodadas de uma única ação cada, onde o jogador que irá iniciar pode ser escolhido da maneira que eles desejarem.</li>
+                </ul>
+            </div>
+            
+            <div>
+                <ul>
+                    <li>A cada rodada há duas jogadas possíveis, adicionar a quantidade de dedos de uma das suas mãos para uma do oponente ou transferir qualquer quantidade de uma das suas mãos para a outra.</li>
+                    <li>É inválido fazer movimentos equivalentes a "passar a vez", como por exemplo, em uma situação onde você tem 2 dedos em uma mão e um na outra, você não pode passar um dedo da mão com dois para a com um, porque seria como se você tivesse passado a vez, ou seja, a jogada é irrelevante.</li>
+                </ul>
+            </div>     
     </footer>
 
-    <script href="/src/js/script.js"></script>
+    <script href="./src/js/script.js"></script>
+    <script>
+        function scrollToGame() {
+            document.querySelector('#Game').scrollIntoView()
+        }
+
+        function scrollToRules() {
+            document.querySelector('#Rules').scrollIntoView()
+        }
+    </script>
 </body>
 </html>
