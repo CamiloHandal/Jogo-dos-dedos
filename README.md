@@ -1,3 +1,3 @@
-# Jogo dos dedos
+# The Finger's Game
 
-Um site para jogar o jogo dos dedos.
+A Site to play this game.
