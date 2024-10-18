@@ -16,10 +16,16 @@
     </header>
 
     <main id="Game">
-        <div>Player X</div>
 
         <div></div>
-
+        <div>
+            <a href="" class="maos" id="mao3"><img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt=""></a>
+            <a href="" class="maos" id="mao4"><img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt=""></a>
+        </div>
+        <div>
+            <a href="" class="maos" id="mao2"><img  src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt=""></a>
+            <a href="" class="maos" id="mao1"><img id="imgmao1" src="https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=" alt=""></a>
+        </div>
         <div></div>
     </main>
 
@@ -41,15 +47,45 @@
             </div>     
     </footer>
 
-    <script href="./src/js/script.js"></script>
     <script>
         function scrollToGame() {
-            document.querySelector('#Game').scrollIntoView()
+            document.querySelector('#Game').scrollIntoView();
         }
 
         function scrollToRules() {
-            document.querySelector('#Rules').scrollIntoView()
+            document.querySelector('#Rules').scrollIntoView();
+        }
+
+        // Define o turno aleatoriamente entre 1 ou 2
+        let turno = Math.floor(Math.random() * 2) + 1;
+        console.log(turno);
+
+        let dedos1 = 1;
+        let imagem1 = document.getElementById("imgmao1");
+
+        let dedos2 = 1;
+        let imagem2 = document.getElementById("imgmao2");
+        
+        let dedos3 = 1;
+        let imagem3 = document.getElementById("imgmao3");
+        
+        let dedos4 = 1;
+        let imagem4 = document.getElementById("imgmao4");
+
+        if (dedos1 == 1) {
+            mudarImagem(imagem1, "https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=");
+        }
+
+        if (turno=1) {
+            
+        }
+
+        
+
+        function mudarImagem(elemento, novaImagem) {
+            elemento.src = novaImagem;
         }
     </script>
+    
 </body>
 </html>

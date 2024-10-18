@@ -60,8 +60,34 @@ main {
     align-items: center;
 }
 
+.maos {
+    display: block;
+    float: right;
+    margin: 10%;
+    border: none;
+}
+.maos img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
 
+    #mao1 {
+        transform: scaleX(-1);
+    }
 
+    #mao2 {
+        border: none;
+    }
+
+    #mao3 {
+        transform: rotate(180deg);
+        transform: scaleY(-1);
+    }
+
+    #mao4 {
+        transform: rotate(180deg);
+    }
 /* REGRAS */
 footer {
     height: 100vh;
