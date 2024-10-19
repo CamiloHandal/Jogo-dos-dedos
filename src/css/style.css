@@ -97,6 +97,7 @@ footer {
     color: white;
     background-color: rgb(15, 15, 15);
     border: 1px dotted red;
+    overflow: hidden;
 }
 
 footer h1 {
