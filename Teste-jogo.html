@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
+    <!-- Reprodutor de áudio -->
     <audio id="musica" loop autoplay>
-        <source src="./src/aud/lobby-classic-game.mp3" type="audio/mp3">
+        <source id="sourceMusica" src="src/lobby-classic-game.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
-    <button id="botao" onclick="controlarMusica()"><img id="imagemmusica" src="https://www.svgrepo.com/show/535722/volume-high.svg" alt=""></button>
+    <button id="botaoToggle">
+        <img id="imagemmusica" src="https://www.svgrepo.com/show/535722/volume-high.svg" alt="Controle de som" width="30">
+    </button>
+
+    <!-- Botão para trocar música -->
+    <button id="botaoTrocar">Trocar Música</button>
     <header>
         <h1>The Finger's Game</h1>
 
@@ -61,25 +67,56 @@
 
     <script src="./src/js/script.js"></script>
     <script>
-        // Variável para controlar o estado da música
-        let musicaAtiva = true;
-        let imagemmusica = document.getElementById("imagemmusica")
-
-        function controlarMusica() {
+//--------------------------------------Musica--------------------------------------------------------------------
+// Executa o código apenas após o DOM estar completamente carregado
+document.addEventListener('DOMContentLoaded', function() {
+            
+            // Variável para controlar o estado da música
+            let musicaAtiva = true;
+            let imagemmusica = document.getElementById("imagemmusica");
             const audio = document.getElementById("musica");
-            const botao = document.getElementById("botao");
 
-            if (musicaAtiva) {
-                audio.pause();
-                imagemmusica.src = "https://www.svgrepo.com/show/535729/volume-x.svg";
-            } else {
+            // Lista de músicas
+            const musicas = [
+                "src/lobby-classic-game.mp3",
+                "src/answer_30sec.mp3",
+                "src/alt02-answer_030sec.mp3",
+                "src/alt03-answer_030sec.mp3",
+                "src/alt02-answer_060sec.mp3"
+            ];
+
+            // Índice atual da música
+            let indiceMusica = 0;
+
+            // Função para controlar a música (ligar/desligar)
+            document.getElementById("botaoToggle").addEventListener("click", function() {
+                if (musicaAtiva) {
+                    audio.pause();
+                    imagemmusica.src = "https://www.svgrepo.com/show/535729/volume-x.svg";  // Ícone de mudo
+                } else {
+                    audio.play();
+                    imagemmusica.src = "https://www.svgrepo.com/show/535722/volume-high.svg";  // Ícone de som
+                }
+
+                musicaAtiva = !musicaAtiva;
+            });
+
+            // Função para trocar a música
+            document.getElementById("botaoTrocar").addEventListener("click", function() {
+                const source = document.getElementById("sourceMusica");
+
+                // Incrementa o índice da música, voltando ao início quando necessário
+                indiceMusica = (indiceMusica + 1) % musicas.length;
+
+                // Atualiza o source da música e reinicia a reprodução
+                source.src = musicas[indiceMusica];
+                audio.load();
                 audio.play();
-                imagemmusica.src = "https://www.svgrepo.com/show/535722/volume-high.svg";
-            }
+            });
 
-            // Alterna o estado da música
-            musicaAtiva = !musicaAtiva;
-        }
+        });
+
+//------------------------------------------------------------------------------------------------------
         //função para descer pro jogo
         function scrollToGame() {
             document.querySelector('#Game').scrollIntoView();

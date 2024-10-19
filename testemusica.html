@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música de Fundo com Controle</title>
+</head>
+<body>
+
+    <!-- Reprodutor de áudio -->
+    <audio id="musica" loop autoplay>
+        <source id="sourceMusica" src="src/lobby-classic-game.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Botão de controle de música -->
+    <button id="botaoToggle">
+        <img id="imagemmusica" src="https://www.svgrepo.com/show/535722/volume-high.svg" alt="Controle de som" width="30">
+    </button>
+
+    <!-- Botão para trocar música -->
+    <button id="botaoTrocar">Trocar Música</button>
+
+    <script>
+        // Executa o código apenas após o DOM estar completamente carregado
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Variável para controlar o estado da música
+            let musicaAtiva = true;
+            let imagemmusica = document.getElementById("imagemmusica");
+            const audio = document.getElementById("musica");
+
+            // Lista de músicas
+            const musicas = [
+                "src/lobby-classic-game.mp3",
+                "src/answer_30sec.mp3",
+                "src/alt02-answer_030sec.mp3",
+                "src/alt03-answer_030sec.mp3",
+                "src/alt02-answer_060sec.mp3"
+            ];
+
+            // Índice atual da música
+            let indiceMusica = 0;
+
+            // Função para controlar a música (ligar/desligar)
+            document.getElementById("botaoToggle").addEventListener("click", function() {
+                if (musicaAtiva) {
+                    audio.pause();
+                    imagemmusica.src = "https://www.svgrepo.com/show/535729/volume-x.svg";  // Ícone de mudo
+                } else {
+                    audio.play();
+                    imagemmusica.src = "https://www.svgrepo.com/show/535722/volume-high.svg";  // Ícone de som
+                }
+
+                musicaAtiva = !musicaAtiva;
+            });
+
+            // Função para trocar a música
+            document.getElementById("botaoTrocar").addEventListener("click", function() {
+                const source = document.getElementById("sourceMusica");
+
+                // Incrementa o índice da música, voltando ao início quando necessário
+                indiceMusica = (indiceMusica + 1) % musicas.length;
+
+                // Atualiza o source da música e reinicia a reprodução
+                source.src = musicas[indiceMusica];
+                audio.load();
+                audio.play();
+            });
+
+        });
+    </script>
+
+</body>
+</html>
