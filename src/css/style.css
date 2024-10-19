@@ -151,3 +151,8 @@ footer div{
     margin: 6.5% 0% -5% 0%;
     width: 90%;
 }
+
+#music {
+    position: fixed;
+    margin: 53% 1%;
+}
