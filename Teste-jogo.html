@@ -12,7 +12,7 @@
         <source src="src/lobby-classic-game.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
-    <button id="botao" onclick="controlarMusica()"><img id="imagemmusica" src="https://www.shutterstock.com/image-vector/speaker-icon-set-illustration-volume-600nw-2477367975.jpg" alt=""></button>
+    <button id="botao" onclick="controlarMusica()"><img id="imagemmusica" src="https://www.svgrepo.com/show/535722/volume-high.svg" alt=""></button>
     <header>
         <h1>The Finger's Game</h1>
 
@@ -71,10 +71,10 @@
 
             if (musicaAtiva) {
                 audio.pause();
-                imagemmusica.src = "https://media.istockphoto.com/id/1305893663/vector/silent-sound-off-icon-vector-for-your-web-design-logo-ui-illustration.jpg?s=612x612&w=0&k=20&c=czrINWt2weKC3fLHU3KqI2eZBFdwhOuuCZxS5JNGpSU=";
+                imagemmusica.src = "https://www.svgrepo.com/show/535729/volume-x.svg";
             } else {
                 audio.play();
-                imagemmusica.src = "https://www.shutterstock.com/image-vector/speaker-icon-set-illustration-volume-600nw-2477367975.jpg";
+                imagemmusica.src = "https://www.svgrepo.com/show/535722/volume-high.svg";
             }
 
             // Alterna o estado da música
