@@ -10,15 +10,18 @@
 <body>
     <!-- Reprodutor de áudio -->
     <audio id="musica" loop autoplay>
-        <source id="sourceMusica" src="src/lobby-classic-game.mp3" type="audio/mp3">
+        <source id="sourceMusica" src="./src/aud/lobby-classic-game.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
-    <button id="botaoToggle">
-        <img id="imagemmusica" src="https://www.svgrepo.com/show/535722/volume-high.svg" alt="Controle de som" width="30">
-    </button>
 
-    <!-- Botão para trocar música -->
-    <button id="botaoTrocar">Trocar Música</button>
+    <div id="music">
+        <button id="botaoToggle">
+            <img id="imagemmusica" src="https://www.svgrepo.com/show/535722/volume-high.svg" alt="Controle de som" width="30">
+        </button>
+
+        <button id="botaoTrocar">Trocar Música</button>
+    </div>
+
     <header>
         <h1>The Finger's Game</h1>
 
@@ -62,8 +65,10 @@
                 <li>A cada rodada há duas jogadas possíveis: adicionar button quantidade de dedos de uma das suas mãos para uma do oponente, ou transferir qualquer quantidade de uma das suas mãos para button outra.</li>
                 <li>É inválido fazer movimentos equivalentes button "passar button vez". Por exemplo, se você tem 2 dedos em uma mão e 1 na outra, você não pode passar um dedo da mão com dois para button com um, pois isso seria irrelevante.</li>
             </ul>
-        </div>     
+        </div>
     </footer>
+
+    
 
     <script src="./src/js/script.js"></script>
     <script>
@@ -78,11 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Lista de músicas
             const musicas = [
-                "src/lobby-classic-game.mp3",
-                "src/answer_30sec.mp3",
-                "src/alt02-answer_030sec.mp3",
-                "src/alt03-answer_030sec.mp3",
-                "src/alt02-answer_060sec.mp3"
+                "./src/aud/lobby-classic-game.mp3",
+                "./src/aud/answer_30sec.mp3",
+                "./src/aud/alt02-answer_030sec.mp3",
+                "./src/aud/alt03-answer_030sec.mp3",
+                "./src/aud/alt02-answer_060sec.mp3"
             ];
 
             // Índice atual da música
@@ -178,13 +183,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (turno==1) {
             ablebutton(botaomao1)
             ablebutton(botaomao2)
-            alert("selecione sua mao")
+            // alert("selecione sua mao")
         }
     //habilitar botões do player 2 no turno 2
         if (turno==2) {
             ablebutton(botaomao3)
             ablebutton(botaomao4)
-            alert("selecione sua mao")
+            // alert("selecione sua mao")
         }
     
     //função para mudar imagens
