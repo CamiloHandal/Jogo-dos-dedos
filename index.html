@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo dos dedos</title>
 
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
+    <!-- Reprodutor de áudio -->
+    <audio id="musica" loop autoplay>
+        <source id="sourceMusica" src="src/lobby-classic-game.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <button id="botaoToggle">
+        <img id="imagemmusica" src="https://www.svgrepo.com/show/535722/volume-high.svg" alt="Controle de som" width="30">
+    </button>
+
+    <!-- Botão para trocar música -->
+    <button id="botaoTrocar">Trocar Música</button>
     <header>
         <h1>The Finger's Game</h1>
 
@@ -16,51 +27,129 @@
     </header>
 
     <main id="Game">
-
         <div></div>
         <div>
-            <a href="" class="maos" id="mao3"><img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt=""></a>
-            <a href="" class="maos" id="mao4"><img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt=""></a>
+            <button href="" class="maos" id="mao3">
+                <img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
+            </button>
+            <button href="" class="maos" id="mao2">
+                <img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
+            </button>
         </div>
         <div>
-            <a href="" class="maos" id="mao2"><img  src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt=""></a>
-            <a href="" class="maos" id="mao1"><img id="imgmao1" src="https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=" alt=""></a>
+            <button href="" class="maos" id="mao4">
+                <img  src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
+            </button>
+            <button href="" class="maos" id="mao1">
+                <img id="imgmao1" src="https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=" alt="">
+            </button>
         </div>
         <div></div>
     </main>
 
     <footer id="Rules">
         <h1>Regras</h1>
-            <div>
-                <ul>
-                    <li>Quando uma mão tem 5 dedos, ela é "eliminada", perdendo todos os dedos.</li>
-                    <li>Você perde quando não tem mais dedos.</li>
-                    <li>O jogo funciona em rodadas de uma única ação cada, onde o jogador que irá iniciar pode ser escolhido da maneira que eles desejarem.</li>
-                </ul>
-            </div>
-            
-            <div>
-                <ul>
-                    <li>A cada rodada há duas jogadas possíveis, adicionar a quantidade de dedos de uma das suas mãos para uma do oponente ou transferir qualquer quantidade de uma das suas mãos para a outra.</li>
-                    <li>É inválido fazer movimentos equivalentes a "passar a vez", como por exemplo, em uma situação onde você tem 2 dedos em uma mão e um na outra, você não pode passar um dedo da mão com dois para a com um, porque seria como se você tivesse passado a vez, ou seja, a jogada é irrelevante.</li>
-                </ul>
-            </div>     
+        <div>
+            <ul>
+                <li>Quando uma mão tem 5 dedos, ela é "eliminada", perdendo todos os dedos.</li>
+                <li>Você perde quando não tem mais dedos.</li>
+                <li>O jogo funciona em rodadas de uma única ação cada, onde o jogador que irá iniciar pode ser escolhido da maneira que eles desejarem.</li>
+            </ul>
+        </div>
+        
+        <div>
+            <ul>
+                <li>A cada rodada há duas jogadas possíveis: adicionar button quantidade de dedos de uma das suas mãos para uma do oponente, ou transferir qualquer quantidade de uma das suas mãos para button outra.</li>
+                <li>É inválido fazer movimentos equivalentes button "passar button vez". Por exemplo, se você tem 2 dedos em uma mão e 1 na outra, você não pode passar um dedo da mão com dois para button com um, pois isso seria irrelevante.</li>
+            </ul>
+        </div>     
     </footer>
 
+    <script src="./src/js/script.js"></script>
     <script>
+//--------------------------------------Musica--------------------------------------------------------------------
+// Executa o código apenas após o DOM estar completamente carregado
+document.addEventListener('DOMContentLoaded', function() {
+            
+            // Variável para controlar o estado da música
+            let musicaAtiva = true;
+            let imagemmusica = document.getElementById("imagemmusica");
+            const audio = document.getElementById("musica");
+
+            // Lista de músicas
+            const musicas = [
+                "src/lobby-classic-game.mp3",
+                "src/answer_30sec.mp3",
+                "src/alt02-answer_030sec.mp3",
+                "src/alt03-answer_030sec.mp3",
+                "src/alt02-answer_060sec.mp3"
+            ];
+
+            // Índice atual da música
+            let indiceMusica = 0;
+
+            // Função para controlar a música (ligar/desligar)
+            document.getElementById("botaoToggle").addEventListener("click", function() {
+                if (musicaAtiva) {
+                    audio.pause();
+                    imagemmusica.src = "https://www.svgrepo.com/show/535729/volume-x.svg";  // Ícone de mudo
+                } else {
+                    audio.play();
+                    imagemmusica.src = "https://www.svgrepo.com/show/535722/volume-high.svg";  // Ícone de som
+                }
+
+                musicaAtiva = !musicaAtiva;
+            });
+
+            // Função para trocar a música
+            document.getElementById("botaoTrocar").addEventListener("click", function() {
+                const source = document.getElementById("sourceMusica");
+
+                // Incrementa o índice da música, voltando ao início quando necessário
+                indiceMusica = (indiceMusica + 1) % musicas.length;
+
+                // Atualiza o source da música e reinicia a reprodução
+                source.src = musicas[indiceMusica];
+                audio.load();
+                audio.play();
+            });
+
+        });
+
+//------------------------------------------------------------------------------------------------------
+        //função para descer pro jogo
         function scrollToGame() {
             document.querySelector('#Game').scrollIntoView();
         }
-
+        //função para descer pras regras
         function scrollToRules() {
             document.querySelector('#Rules').scrollIntoView();
         }
+        //função para desabilitar os botões
+        function disablebbutton(botao) {
+        botao.disabled = true
+    }
+        //função para habilitar botões
+        function ablebutton(botao) {
+            botao.disabled = false
+        }
+   
+        //Declaração doss elementos e desabilitando botões
+        let botaomao1 = document.getElementById("mao1")
+        let botaomao2 = document.getElementById("mao2")
+        let botaomao3 = document.getElementById("mao3")
+        let botaomao4 = document.getElementById("mao4")
+        disablebbutton(botaomao1)
+        disablebbutton(botaomao2)
+        disablebbutton(botaomao3)
+        disablebbutton(botaomao4)
 
         // Define o turno aleatoriamente entre 1 ou 2
         let turno = Math.floor(Math.random() * 2) + 1;
         console.log(turno);
-
-        let dedos1 = 1;
+ 
+        //Declaração de valores e imagens para os dedos
+        let dedos1 = 2; //teste
         let imagem1 = document.getElementById("imgmao1");
 
         let dedos2 = 1;
@@ -72,20 +161,50 @@
         let dedos4 = 1;
         let imagem4 = document.getElementById("imgmao4");
 
-        if (dedos1 == 1) {
-            mudarImagem(imagem1, "https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=");
+        //função para verificar a quantidade de dedos e alterar a imagem
+        function verificarDedos() {
+    if (dedos1 == 1) {
+        mudarImagem(imagem1, "https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=");
+       
+    }}
+  
+    //chama a função de verificar em um intervalo de 500ms
+    let intervalo = setInterval(verificarDedos, 500);
+
+    
+    dedos1=1 //outro teste de valor
+
+    //habilitar botões do player 1 no turno 1
+        if (turno==1) {
+            ablebutton(botaomao1)
+            ablebutton(botaomao2)
+            alert("selecione sua mao")
         }
-
-        if (turno=1) {
-            
+    //habilitar botões do player 2 no turno 2
+        if (turno==2) {
+            ablebutton(botaomao3)
+            ablebutton(botaomao4)
+            alert("selecione sua mao")
         }
-
-        
-
+    
+    //função para mudar imagens
         function mudarImagem(elemento, novaImagem) {
             elemento.src = novaImagem;
         }
-    </script>
     
+        //habilita olheiros para os botoes e quando clicados alertar na tela
+        botaomao1.addEventListener("click", () => {
+        alert("Clicou!") 
+    })
+    botaomao2.addEventListener("click", () => {
+        alert("Clicou!")
+    })
+    botaomao3.addEventListener("click", () => {
+        alert("Clicou!")
+    })
+    botaomao4.addEventListener("click", () => {
+        alert("Clicou!")
+    })
+    </script>
 </body>
 </html>
