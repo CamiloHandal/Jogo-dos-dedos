@@ -37,7 +37,14 @@
             </button>
         </div>
         <div>
+            <p id="avisojogada2">
+            </p>
+            <br>
             <p id="avisoturno">
+            </p>
+            <br>
+            <p id="avisojogada">
+
             </p>
         </div>
         <div>
@@ -147,6 +154,9 @@ document.addEventListener('DOMContentLoaded', function() {
         disablebutton(botaomao3)
         disablebutton(botaomao4)
 
+
+        let avisojogada = document.getElementById("avisojogada")
+        let avisojogada2 = document.getElementById("avisojogada2")
        
 
         //Declaração de valores e imagens para os dedos
@@ -159,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let proxydedos = new Proxy(dedos, {
             set(target, name, value){
             console.log("Mudando", target);
+            fimdejogo
             target[name] = value
             }
         })
@@ -189,8 +200,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if(proxydedos.dedos1 == 4) {
         mudarImagem(imagem1, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
     }
-    if(proxydedos.dedos1 == 5) {
+    if(proxydedos.dedos1 >= 5) {
+        disablebutton(botaomao1)
         mudarImagem(imagem1, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+      setTimeout(() => {
+        proxydedos.dedos1 = 0
+      }, 750);
+        
     }
     if(proxydedos.dedos1 == 0) {
         mudarImagem(imagem1, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
@@ -208,8 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if(proxydedos.dedos2 == 4) {
         mudarImagem(imagem2, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
     }
-    if(proxydedos.dedos2 == 5) {
+    if(proxydedos.dedos2 >= 5) {
+        disablebutton(botaomao2)
         mudarImagem(imagem2, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+        setTimeout(() => {
+            proxydedos.dedos2 = 0
+            
+      }, 750);
     }
     if(proxydedos.dedos2 == 0) {
         mudarImagem(imagem2, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
@@ -227,8 +248,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if(proxydedos.dedos3 == 4) {
         mudarImagem(imagem3, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
     }
-    if(proxydedos.dedos3 == 5) {
-        mudarImagem(imagem3, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+    if(proxydedos.dedos3 >= 5) {
+        disablebutton(botaomao3)
+        mudarImagem(imagem3, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg")
+        setTimeout(() => {
+        proxydedos.dedos3 = 0
+        
+      }, 750);
     }
     if(proxydedos.dedos3 == 0) {
         mudarImagem(imagem3, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
@@ -246,8 +272,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if(proxydedos.dedos4 == 4) {
         mudarImagem(imagem4, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
     }
-    if(proxydedos.dedos4 == 5) {
-        mudarImagem(imagem4, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+    if(proxydedos.dedos4 >= 5) {
+        disablebutton(botaomao4)
+        mudarImagem(imagem4, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg")
+        setTimeout(() => {
+        proxydedos.dedos4 = 0
+      }, 750);
     }
     if(proxydedos.dedos4 == 0) {
         mudarImagem(imagem4, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
@@ -268,34 +298,84 @@ function configurarTurno(turnoAtual) {
         function ablebutton(botao) {
             botao.disabled = false
         }
+
     // Limpa todos os botões antes de configurar o novo turno
     disablebutton(botaomao1);
     disablebutton(botaomao2);
     disablebutton(botaomao3);
     disablebutton(botaomao4);
 
+    fimdejogo
+    
     if (turnoAtual === 1) {
-        // Habilitar botões do player 1 no turno 1
-        ablebutton(botaomao1);
-        ablebutton(botaomao2);
+        // Limpa todos os botões antes de configurar o novo turno
+    disablebutton(botaomao1);
+    disablebutton(botaomao2);
+    disablebutton(botaomao3);
+    disablebutton(botaomao4);
+    avisojogada2.textContent = ""
+        botaomao3.removeEventListener("click", mao3selecionar)
+        botaomao4.removeEventListener("click", mao4selecionar)
+        botaomao3.style.border = "none"
+        botaomao4.style.border = "none"
         botaomao3.removeEventListener("click", preeação3);
         botaomao4.removeEventListener("click", preeação4);
+        // Habilitar botões do player 1 no turno 1
+        if (proxydedos.dedos1 > 0){
+            ablebutton(botaomao1);
+            botaomao1.addEventListener("click", preeação1);
+        } else {
+            disablebutton(botaomao1);
+        }
+        if (proxydedos.dedos1 == 0){
+            disablebutton(botaomao1)
+            botaomao1.removeEventListener("click", preeação1)
+        }
+
+        if (proxydedos.dedos2 > 0){
+            ablebutton(botaomao2);
+            botaomao2.addEventListener("click", preeação2);
+        } else {
+            disablebutton(botaomao2);
+        }
+        if (proxydedos.dedos2 == 0){
+            disablebutton(botaomao2)
+            botaomao2.removeEventListener("click", preeação1)
+        }
         avisoturno.textContent = "É a vez do de baixo!";
 
-        botaomao1.addEventListener("click", preeação1);
-        botaomao2.addEventListener("click", preeação2);
+        
+        
     }
 
     if (turnoAtual === 2) {
-        // Habilitar botões do player 2 no turno 2
-        ablebutton(botaomao3);
-        ablebutton(botaomao4);
+        // Limpa todos os botões antes de configurar o novo turno
+    disablebutton(botaomao1);
+    disablebutton(botaomao2);
+    disablebutton(botaomao3);
+    disablebutton(botaomao4);
+    avisojogada.textContent = ""
+        botaomao1.removeEventListener("click", mao1selecionar)
+        botaomao2.removeEventListener("click", mao2selecionar)
+        botaomao1.style.border = "none"
+        botaomao2.style.border = "none"
         botaomao1.removeEventListener("click", preeação1);
         botaomao2.removeEventListener("click", preeação2);
+        // Habilitar botões do player 2 no turno 2
+        if (proxydedos.dedos3 > 0){
+            ablebutton(botaomao3);
+            botaomao3.addEventListener("click", preeação3);
+        } else {
+            disablebutton(botaomao3);
+        }
+        if (proxydedos.dedos4 > 0 ){
+            ablebutton(botaomao4);
+            botaomao4.addEventListener("click", preeação4);
+        } else {
+            disablebutton(botaomao4);
+        }
         avisoturno.textContent = "É a vez do de cima!";
 
-        botaomao3.addEventListener("click", preeação3);
-        botaomao4.addEventListener("click", preeação4);
     }
 }
 
@@ -311,40 +391,91 @@ let proxyTurno = new Proxy({ valor: turno }, {
 
 // Configura o turno inicial
 configurarTurno(proxyTurno.valor);
+
   
     //chama a função de verificar em um intervalo de 500ms
     let intervalo = setInterval(verificarDedos, 500);
     function preeação1() {
-        alert("Selecione seu alvo!");
+        botaomao1.removeEventListener("click", preeação1)
+        avisojogada.textContent = "Selecione seu alvo!"
+        botaomao1.style.border = "solid red"
             ablebutton(botaomao3);
             ablebutton(botaomao4);
-
+            ablebutton(botaomao1)
             botaomao3.addEventListener("click", ação1pra3);
             botaomao4.addEventListener("click", ação1pra4);
+            botaomao1.addEventListener("click", mao1selecionar)
+                
+            
     }
+    function mao1selecionar() {
+        botaomao3.removeEventListener("click", ação1pra3)
+                botaomao4.removeEventListener("click", ação1pra4)
+                botaomao1.removeEventListener("click", mao1selecionar)
+                botaomao1.style.border = "none"
+                avisojogada.textContent = ""
+                botaomao1.addEventListener("click",preeação1)
+    }
+
     function preeação2() {
-        alert("Selecione seu alvo!");
+        botaomao2.removeEventListener("click", preeação2)
+        avisojogada.textContent = "Selecione seu alvo!"
+        botaomao2.style.border = "solid red"
             ablebutton(botaomao3);
             ablebutton(botaomao4);
-
+            ablebutton(botaomao2)
             botaomao3.addEventListener("click", ação2pra3);
             botaomao4.addEventListener("click", ação2pra4);
+            botaomao2.addEventListener("click", mao2selecionar)
     }
+    function mao2selecionar() {
+        botaomao3.removeEventListener("click", ação2pra3)
+                botaomao4.removeEventListener("click", ação2pra4)
+                botaomao2.removeEventListener("click", mao2selecionar)
+                botaomao2.style.border = "none"
+                avisojogada.textContent = ""
+                botaomao2.addEventListener("click",preeação2)
+    }
+
+
     function preeação3() {
-        alert("Selecione seu alvo!");
+        botaomao3.removeEventListener("click", preeação3)
+        botaomao3.style.border = "solid red"
+        avisojogada2.textContent = "Selecione seu alvo!"
             ablebutton(botaomao1);
             ablebutton(botaomao2);
-
+            ablebutton(botaomao3)
             botaomao1.addEventListener("click", ação3pra1);
             botaomao2.addEventListener("click", ação3pra2);
+            botaomao3.addEventListener("click", mao3selecionar)
     }
+    function mao3selecionar() {
+        botaomao1.removeEventListener("click", ação3pra1)
+                botaomao2.removeEventListener("click", ação3pra2)
+                botaomao3.removeEventListener("click", mao3selecionar)
+                botaomao3.style.border = "none"
+                avisojogada2.textContent = ""
+                botaomao3.addEventListener("click",preeação3)
+    }
+
     function preeação4() {
-        alert("Selecione seu alvo!");
+       botaomao4.removeEventListener("click",preeação4)
+        botaomao4.style.border = "solid red"
+        avisojogada2.textContent = "Selecione seu alvo!"
             ablebutton(botaomao1);
             ablebutton(botaomao2);
-
+            ablebutton(botaomao4)
             botaomao1.addEventListener("click", ação4pra1);
             botaomao2.addEventListener("click", ação4pra2);
+            botaomao4.addEventListener("click", mao4selecionar)
+    }
+    function mao4selecionar() {
+        botaomao1.removeEventListener("click", ação4pra1)
+                botaomao2.removeEventListener("click", ação4pra2)
+                botaomao4.removeEventListener("click", mao4selecionar)
+                botaomao4.style.border = "none"
+                avisojogada2.textContent = ""
+                botaomao4.addEventListener("click",preeação4)
     }
     
     function ação1pra3() {
@@ -414,8 +545,26 @@ configurarTurno(proxyTurno.valor);
             elemento.src = novaImagem;
         }
     
+        function fimdejogo() {
+            if (proxydedos.dedos1 == 0 & proxydedos.dedos2 ==0){
+                alert("Player 2 venceu!")
+                proxyTurno = Math.floor(Math.random() * 2) + 1;
+                proxydedos.dedos1 = 1
+                proxydedos.dedos2 = 1
+                proxydedos.dedos3 = 1
+                proxydedos.dedos4 = 1
+            }
+            if(proxydedos.dedos3 == 0 & proxydedos.dedos4 == 0){
+                alert("Player 1 venceu!")
+                proxyTurno = Math.floor(Math.random() * 2) + 1;
+                proxydedos.dedos1 = 1
+                proxydedos.dedos2 = 1
+                proxydedos.dedos3 = 1
+                proxydedos.dedos4 = 1
+            }
+        }
 
-
+        let intervalofim = setInterval(fimdejogo, 2000);
 
         //habilita olheiros para os botoes e quando clicados alertar na tela
   
