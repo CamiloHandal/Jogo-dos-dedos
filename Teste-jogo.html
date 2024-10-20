@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo dos dedos</title>
 
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 </head>
 <body>
     <!-- Reprodutor de áudio -->
     <audio id="musica" loop autoplay>
-        <source id="sourceMusica" src="src/lobby-classic-game.mp3" type="audio/mp3">
+        <source id="sourceMusica" src="/src/lobby-classic-game.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
     <button id="botaoToggle">
@@ -30,15 +30,19 @@
         <div></div>
         <div>
             <button href="" class="maos" id="mao3">
-                <img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
+                <img id="imgmao3" src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
             </button>
             <button href="" class="maos" id="mao2">
-                <img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
+                <img id="imgmao2" src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
             </button>
         </div>
         <div>
+            <p id="avisoturno">
+            </p>
+        </div>
+        <div>
             <button href="" class="maos" id="mao4">
-                <img  src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
+                <img id="imgmao4" src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
             </button>
             <button href="" class="maos" id="mao1">
                 <img id="imgmao1" src="https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=" alt="">
@@ -65,7 +69,6 @@
         </div>     
     </footer>
 
-    <script src="./src/js/script.js"></script>
     <script>
 //--------------------------------------Musica--------------------------------------------------------------------
 // Executa o código apenas após o DOM estar completamente carregado
@@ -78,11 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Lista de músicas
             const musicas = [
-                "src/lobby-classic-game.mp3",
-                "src/answer_30sec.mp3",
-                "src/alt02-answer_030sec.mp3",
-                "src/alt03-answer_030sec.mp3",
-                "src/alt02-answer_060sec.mp3"
+                "/src/lobby-classic-game.mp3",
+                "/src/answer_30sec.mp3",
+                "/src/alt02-answer_030sec.mp3",
+                "/src/alt03-answer_030sec.mp3",
+                "/src/alt02-answer_060sec.mp3"
             ];
 
             // Índice atual da música
@@ -126,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('#Rules').scrollIntoView();
         }
         //função para desabilitar os botões
-        function disablebbutton(botao) {
+        function disablebutton(botao) {
         botao.disabled = true
     }
         //função para habilitar botões
@@ -139,72 +142,283 @@ document.addEventListener('DOMContentLoaded', function() {
         let botaomao2 = document.getElementById("mao2")
         let botaomao3 = document.getElementById("mao3")
         let botaomao4 = document.getElementById("mao4")
-        disablebbutton(botaomao1)
-        disablebbutton(botaomao2)
-        disablebbutton(botaomao3)
-        disablebbutton(botaomao4)
+        disablebutton(botaomao1)
+        disablebutton(botaomao2)
+        disablebutton(botaomao3)
+        disablebutton(botaomao4)
 
-        // Define o turno aleatoriamente entre 1 ou 2
-        let turno = Math.floor(Math.random() * 2) + 1;
-        console.log(turno);
- 
+       
+
         //Declaração de valores e imagens para os dedos
-        let dedos1 = 2; //teste
+        let dedos = {
+            dedos1:1,
+            dedos2:1,
+            dedos3:1,
+            dedos4:1,
+        }
+        let proxydedos = new Proxy(dedos, {
+            set(target, name, value){
+            console.log("Mudando", target);
+            target[name] = value
+            }
+        })
+
+
+ 
         let imagem1 = document.getElementById("imgmao1");
 
-        let dedos2 = 1;
+    
         let imagem2 = document.getElementById("imgmao2");
         
-        let dedos3 = 1;
+  
         let imagem3 = document.getElementById("imgmao3");
         
-        let dedos4 = 1;
         let imagem4 = document.getElementById("imgmao4");
 
         //função para verificar a quantidade de dedos e alterar a imagem
         function verificarDedos() {
-    if (dedos1 == 1) {
+    if (proxydedos.dedos1 == 1) {
         mudarImagem(imagem1, "https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=");
-       
-    }}
+    }
+    if(proxydedos.dedos1 == 2) {
+        mudarImagem(imagem1, "https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=");
+    }
+    if(proxydedos.dedos1 == 3) {
+        mudarImagem(imagem1, "https://images.freeimages.com/images/large-previews/1fe/counting-fingers-3-1482747.jpg");
+    }
+    if(proxydedos.dedos1 == 4) {
+        mudarImagem(imagem1, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
+    }
+    if(proxydedos.dedos1 == 5) {
+        mudarImagem(imagem1, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+    }
+    if(proxydedos.dedos1 == 0) {
+        mudarImagem(imagem1, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
+    }
+
+    if (proxydedos.dedos2 == 1) {
+        mudarImagem(imagem2, "https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=");
+    }
+    if(proxydedos.dedos2 == 2) {
+        mudarImagem(imagem2, "https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=");
+    }
+    if(proxydedos.dedos2 == 3) {
+        mudarImagem(imagem2, "https://images.freeimages.com/images/large-previews/1fe/counting-fingers-3-1482747.jpg");
+    }
+    if(proxydedos.dedos2 == 4) {
+        mudarImagem(imagem2, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
+    }
+    if(proxydedos.dedos2 == 5) {
+        mudarImagem(imagem2, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+    }
+    if(proxydedos.dedos2 == 0) {
+        mudarImagem(imagem2, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
+    }
+    
+    if (proxydedos.dedos3 == 1) {
+        mudarImagem(imagem3, "https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=");
+    }
+    if(proxydedos.dedos3 == 2) {
+        mudarImagem(imagem3, "https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=");
+    }
+    if(proxydedos.dedos3 == 3) {
+        mudarImagem(imagem3, "https://images.freeimages.com/images/large-previews/1fe/counting-fingers-3-1482747.jpg");
+    }
+    if(proxydedos.dedos3 == 4) {
+        mudarImagem(imagem3, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
+    }
+    if(proxydedos.dedos3 == 5) {
+        mudarImagem(imagem3, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+    }
+    if(proxydedos.dedos3 == 0) {
+        mudarImagem(imagem3, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
+    }
+
+    if (proxydedos.dedos4 == 1) {
+        mudarImagem(imagem4, "https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=");
+    }
+    if(proxydedos.dedos4 == 2) {
+        mudarImagem(imagem4, "https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=");
+    }
+    if(proxydedos.dedos4 == 3) {
+        mudarImagem(imagem4, "https://images.freeimages.com/images/large-previews/1fe/counting-fingers-3-1482747.jpg");
+    }
+    if(proxydedos.dedos4 == 4) {
+        mudarImagem(imagem4, "https://thumbs.dreamstime.com/b/4-dedos-4-3136971.jpg");
+    }
+    if(proxydedos.dedos4 == 5) {
+        mudarImagem(imagem4, "https://img.freepik.com/fotos-premium/cinco-dedos_1035383-3.jpg");
+    }
+    if(proxydedos.dedos4 == 0) {
+        mudarImagem(imagem4, "https://media.gettyimages.com/id/1320896008/pt/foto/fist.jpg?s=612x612&w=gi&k=20&c=pcZiMph9wzOg-oyPrGe6RJHkpSBy3vkTWUpReTS3_nk=");
+    }
+}
+
+// Define o turno aleatoriamente entre 1 ou 2
+let turno = Math.floor(Math.random() * 2) + 1;
+console.log("Turno inicial: " + turno);
+let avisoturno = document.getElementById("avisoturno")
+    // Função para configurar os eventos e habilitações baseadas no turno
+function configurarTurno(turnoAtual) {
+    //função para desabilitar os botões
+    function disablebutton(botao) {
+        botao.disabled = true
+    }
+        //função para habilitar botões
+        function ablebutton(botao) {
+            botao.disabled = false
+        }
+    // Limpa todos os botões antes de configurar o novo turno
+    disablebutton(botaomao1);
+    disablebutton(botaomao2);
+    disablebutton(botaomao3);
+    disablebutton(botaomao4);
+
+    if (turnoAtual === 1) {
+        // Habilitar botões do player 1 no turno 1
+        ablebutton(botaomao1);
+        ablebutton(botaomao2);
+        botaomao3.removeEventListener("click", preeação3);
+        botaomao4.removeEventListener("click", preeação4);
+        avisoturno.textContent = "É a vez do de baixo!";
+
+        botaomao1.addEventListener("click", preeação1);
+        botaomao2.addEventListener("click", preeação2);
+    }
+
+    if (turnoAtual === 2) {
+        // Habilitar botões do player 2 no turno 2
+        ablebutton(botaomao3);
+        ablebutton(botaomao4);
+        botaomao1.removeEventListener("click", preeação1);
+        botaomao2.removeEventListener("click", preeação2);
+        avisoturno.textContent = "É a vez do de cima!";
+
+        botaomao3.addEventListener("click", preeação3);
+        botaomao4.addEventListener("click", preeação4);
+    }
+}
+
+// Proxy para interceptar a alteração do turno
+let proxyTurno = new Proxy({ valor: turno }, {
+    set(obj, prop, novoValor) {
+        obj[prop] = novoValor;
+        console.log("Turno alterado para: " + novoValor);
+        configurarTurno(novoValor); // Chama a função que configura os eventos do turno
+        return true;
+    }
+});
+
+// Configura o turno inicial
+configurarTurno(proxyTurno.valor);
   
     //chama a função de verificar em um intervalo de 500ms
     let intervalo = setInterval(verificarDedos, 500);
+    function preeação1() {
+        alert("Selecione seu alvo!");
+            ablebutton(botaomao3);
+            ablebutton(botaomao4);
+
+            botaomao3.addEventListener("click", ação1pra3);
+            botaomao4.addEventListener("click", ação1pra4);
+    }
+    function preeação2() {
+        alert("Selecione seu alvo!");
+            ablebutton(botaomao3);
+            ablebutton(botaomao4);
+
+            botaomao3.addEventListener("click", ação2pra3);
+            botaomao4.addEventListener("click", ação2pra4);
+    }
+    function preeação3() {
+        alert("Selecione seu alvo!");
+            ablebutton(botaomao1);
+            ablebutton(botaomao2);
+
+            botaomao1.addEventListener("click", ação3pra1);
+            botaomao2.addEventListener("click", ação3pra2);
+    }
+    function preeação4() {
+        alert("Selecione seu alvo!");
+            ablebutton(botaomao1);
+            ablebutton(botaomao2);
+
+            botaomao1.addEventListener("click", ação4pra1);
+            botaomao2.addEventListener("click", ação4pra2);
+    }
+    
+    function ação1pra3() {
+        proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3
+                    console.log("somou!")
+                    proxyTurno.valor=2
+                    botaomao3.removeEventListener("click", ação1pra3)
+                    botaomao4.removeEventListener("click", ação1pra4)
+    }
+    function ação1pra4() {
+        proxydedos.dedos4 = proxydedos.dedos1 + proxydedos.dedos4
+                    console.log("somou!")
+                    proxyTurno.valor=2
+                    botaomao3.removeEventListener("click", ação1pra3)
+                    botaomao4.removeEventListener("click", ação1pra4)
+    }
+
+    function ação2pra3() {
+        proxydedos.dedos3 = proxydedos.dedos2 + proxydedos.dedos3
+                    console.log("somou!")
+                    proxyTurno.valor=2
+                    botaomao3.removeEventListener("click", ação2pra3)
+                    botaomao4.removeEventListener("click", ação2pra4)
+    }
+    function ação2pra4() {
+        proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
+                    console.log("somou!")
+                    proxyTurno.valor=2
+                    botaomao3.removeEventListener("click", ação2pra3)
+                    botaomao4.removeEventListener("click", ação2pra4)
+    }
+
+    function ação3pra1() {
+        proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos3
+                    console.log("somou!")
+                    proxyTurno.valor=1
+                    botaomao1.removeEventListener("click", ação3pra1)
+                    botaomao2.removeEventListener("click", ação3pra2)
+                }
+    function ação3pra2() {
+        proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
+                    console.log("somou!")
+                    proxyTurno.valor=1
+                    botaomao1.removeEventListener("click", ação3pra1)
+                    botaomao2.removeEventListener("click", ação3pra2)
+                }
+
+    function ação4pra1() {
+        proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos4
+                    console.log("somou!")
+                    proxyTurno.valor=1
+                    botaomao1.removeEventListener("click", ação4pra1)
+                    botaomao2.removeEventListener("click", ação4pra2)
+    }
+    function ação4pra2() {
+        proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos4
+                    console.log("somou!")
+                    proxyTurno.valor=1
+                    botaomao1.removeEventListener("click", ação4pra1)
+                    botaomao2.removeEventListener("click", ação4pra2)
+    }
 
     
-    dedos1=1 //outro teste de valor
-
-    //habilitar botões do player 1 no turno 1
-        if (turno==1) {
-            ablebutton(botaomao1)
-            ablebutton(botaomao2)
-            alert("selecione sua mao")
-        }
-    //habilitar botões do player 2 no turno 2
-        if (turno==2) {
-            ablebutton(botaomao3)
-            ablebutton(botaomao4)
-            alert("selecione sua mao")
-        }
     
     //função para mudar imagens
         function mudarImagem(elemento, novaImagem) {
             elemento.src = novaImagem;
         }
     
+
+
+
         //habilita olheiros para os botoes e quando clicados alertar na tela
-        botaomao1.addEventListener("click", () => {
-        alert("Clicou!") 
-    })
-    botaomao2.addEventListener("click", () => {
-        alert("Clicou!")
-    })
-    botaomao3.addEventListener("click", () => {
-        alert("Clicou!")
-    })
-    botaomao4.addEventListener("click", () => {
-        alert("Clicou!")
-    })
+  
     </script>
 </body>
 </html>
