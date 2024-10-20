@@ -22,7 +22,7 @@ header {
     align-items: center;
 }
 header h1 {
-    font-size: 1000%;
+    font-size: clamp(10vw, 10vw, 1000%);
     text-shadow: 2px 2px 0px white;
     margin: 7% 0% 8% 0%;
 }
