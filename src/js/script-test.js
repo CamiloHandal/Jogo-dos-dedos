@@ -94,6 +94,7 @@ let proxydedos = new Proxy(dedos, {
     console.log("Mudando", target);
     fimdejogo
     target[name] = value
+    verificarDedos()
     }
 })
 
@@ -108,6 +109,17 @@ let imagem2 = document.getElementById("imgmao2");
 let imagem3 = document.getElementById("imgmao3");
 
 let imagem4 = document.getElementById("imgmao4");
+
+let botaotransferir1 = document.getElementById("botaotransferir1")
+let botaotransferir2 = document.getElementById("botaotransferir2")
+let botaotransferir3 = document.getElementById("botaotransferir3")
+let botaotransferir4 = document.getElementById("botaotransferir4")
+
+let botaotransferir21 = document.getElementById("botaotransferir2-1")
+let botaotransferir22 = document.getElementById("botaotransferir2-2")
+let botaotransferir23 = document.getElementById("botaotransferir2-3")
+let botaotransferir24 = document.getElementById("botaotransferir2-4")
+
 
 //função para verificar a quantidade de dedos e alterar a imagem
 function verificarDedos() {
@@ -263,7 +275,7 @@ if (proxydedos.dedos2 > 0){
 }
 if (proxydedos.dedos2 == 0){
     disablebutton(botaomao2)
-    botaomao2.removeEventListener("click", preeação1)
+    botaomao2.removeEventListener("click", preeação2)
 }
 avisoturno.textContent = "É a vez do de baixo!";
 
@@ -306,6 +318,7 @@ avisoturno.textContent = "É a vez do de cima!";
 let proxyTurno = new Proxy({ valor: turno }, {
 set(obj, prop, novoValor) {
 obj[prop] = novoValor;
+desabilitarTransferencia();
 console.log("Turno alterado para: " + novoValor);
 configurarTurno(novoValor); // Chama a função que configura os eventos do turno
 return true;
@@ -316,23 +329,362 @@ return true;
 configurarTurno(proxyTurno.valor);
 
 
-//chama a função de verificar em um intervalo de 500ms
-let intervalo = setInterval(verificarDedos, 500);
-function preeação1() {
-botaomao1.removeEventListener("click", preeação1)
-avisojogada.textContent = "Selecione seu alvo!"
-botaomao1.style.border = "solid red"
-    if(proxydedos.dedos3 > 0){
-    ablebutton(botaomao3);
-    botaomao3.addEventListener("click", ação1pra3);}
-    if(proxydedos.dedos4 > 0){
-    ablebutton(botaomao4);
-    botaomao4.addEventListener("click", ação1pra4);}
-    ablebutton(botaomao1)
-    botaomao1.addEventListener("click", mao1selecionar)
-        
+// Variáveis globais para armazenar as funções dos event listeners
+let listener1, listener2, listener3, listener4;
+
+// Função para transferir dedos entre as mãos
+function transferirEntreMaos(maoOrigem, maoDestino, numDedos) {
+    let tempOrigem = proxydedos[maoOrigem];
+    let tempDestino = proxydedos[maoDestino];
     
+    proxydedos[maoOrigem] -= numDedos;
+    proxydedos[maoDestino] += numDedos;
+
+    // Verificação de jogada inválida
+    if (proxydedos[maoOrigem] === tempDestino && proxydedos[maoDestino] === tempOrigem) {
+        alert("JOGADA INVÁLIDA!\nJogadas de 'passar a vez' sem mudar os dedos não são permitidas!");
+        proxydedos[maoOrigem] = tempOrigem; // Reverte o estado
+        proxydedos[maoDestino] = tempDestino;
+        return false; // Retorna falso se a jogada for inválida
+    }
+    return true; // Retorna verdadeiro se a jogada for válida
 }
+
+// Função para desabilitar os botões de transferência após a jogada
+function desabilitarTransferencia() {
+    // Remove listeners das ações de mão
+    botaomao1.removeEventListener("click", preeação1);
+    botaomao2.removeEventListener("click", preeação2);
+    botaomao3.removeEventListener("click", ação1pra3);
+    botaomao4.removeEventListener("click", ação1pra4);
+    botaomao3.removeEventListener("click", ação2pra3);
+    botaomao4.removeEventListener("click", ação2pra4);
+
+    botaomao3.removeEventListener("click", preeação3);
+    botaomao4.removeEventListener("click", preeação4);
+    botaomao1.removeEventListener("click", ação3pra1);
+    botaomao2.removeEventListener("click", ação3pra2);
+    botaomao1.removeEventListener("click", ação4pra1);
+    botaomao2.removeEventListener("click", ação4pra2);
+
+    botaomao1.removeEventListener("click", transferir2pra1)
+    botaomao2.removeEventListener("click", tranferir1pra2)
+
+    botaomao3.removeEventListener("click", transferir4pra3)
+    botaomao4.removeEventListener("click", transferir3pra4)
+
+    disablebutton(botaotransferir1);
+    botaotransferir1.hidden = true;
+    if (listener1) {
+        botaotransferir1.removeEventListener("click", listener1);
+    }
+
+    disablebutton(botaotransferir2);
+    botaotransferir2.hidden = true;
+    if (listener2) {
+        botaotransferir2.removeEventListener("click", listener2);
+    }
+
+    disablebutton(botaotransferir3);
+    botaotransferir3.hidden = true;
+    if (listener3) {
+        botaotransferir3.removeEventListener("click", listener3);
+    }
+
+    disablebutton(botaotransferir4);
+    botaotransferir4.hidden = true;
+    if (listener4) {
+        botaotransferir4.removeEventListener("click", listener4);
+    }
+    
+    
+
+
+    disablebutton(botaotransferir21);
+    botaotransferir21.hidden = true;
+    if (listener1) {
+        botaotransferir21.removeEventListener("click", listener1);
+    }
+
+    disablebutton(botaotransferir22);
+    botaotransferir22.hidden = true;
+    if (listener2) {
+        botaotransferir22.removeEventListener("click", listener2);
+    }
+
+    disablebutton(botaotransferir23);
+    botaotransferir23.hidden = true;
+    if (listener3) {
+        botaotransferir23.removeEventListener("click", listener3);
+    }
+
+    disablebutton(botaotransferir24);
+    botaotransferir24.hidden = true;
+    if (listener4) {
+        botaotransferir24.removeEventListener("click", listener4);
+    }
+}
+
+function tranferir1pra2() {
+    if (proxydedos.dedos1 >= 1) {
+        avisojogada.textContent = "Selecione a quantidade de dedos:"
+        botaotransferir1.hidden = false;
+        ablebutton(botaotransferir1);
+        listener1 = function () {
+            if (transferirEntreMaos("dedos1", "dedos2", 1)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir1.addEventListener("click", listener1);
+    }
+
+    if (proxydedos.dedos1 >= 2) {
+        if (proxydedos.dedos1 == 3 && proxydedos.dedos2 == 4){
+            botaotransferir2.hidden = true;
+        disablebutton(botaotransferir2);
+        } else {
+        botaotransferir2.hidden = false;
+        ablebutton(botaotransferir2);
+    }
+        listener2 = function () {
+            if (transferirEntreMaos("dedos1", "dedos2", 2)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir2.addEventListener("click", listener2);
+    }
+
+    if (proxydedos.dedos1 >= 3) {
+        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
+            botaotransferir3.hidden = false;
+            ablebutton(botaotransferir3);
+        }    
+        listener3 = function () {
+            if (transferirEntreMaos("dedos1", "dedos2", 3)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir3.addEventListener("click", listener3);
+    }
+
+    if (proxydedos.dedos1 == 4) {
+        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
+        botaotransferir4.hidden = false;
+        ablebutton(botaotransferir4);
+    }    
+        listener4 = function () {
+            if (transferirEntreMaos("dedos1", "dedos2", 4)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir4.addEventListener("click", listener4);
+    }
+}
+
+function transferir2pra1() {
+    if (proxydedos.dedos2 >= 1) {
+        avisojogada.textContent = "Selecione a quantidade de dedos:"
+        botaotransferir1.hidden = false;
+        ablebutton(botaotransferir1);
+        listener1 = function () {
+            if (transferirEntreMaos("dedos2", "dedos1", 1)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir1.addEventListener("click", listener1);
+    }
+
+    if (proxydedos.dedos2 >= 2) {
+        if (proxydedos.dedos1 == 4 && proxydedos.dedos2 == 3){
+            botaotransferir2.hidden = true;
+        disablebutton(botaotransferir2);
+        } else {
+        botaotransferir2.hidden = false;
+        ablebutton(botaotransferir2);
+    }
+        listener2 = function () {
+            if (transferirEntreMaos("dedos2", "dedos1", 2)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir2.addEventListener("click", listener2);
+    }
+
+    if (proxydedos.dedos2 >= 3) {
+        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
+            botaotransferir3.hidden = false;
+            ablebutton(botaotransferir3);
+        }    
+        listener3 = function () {
+            if (transferirEntreMaos("dedos2", "dedos1", 3)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir3.addEventListener("click", listener3);
+    }
+
+    if (proxydedos.dedos2 == 4) {
+        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
+            botaotransferir4.hidden = false;
+            ablebutton(botaotransferir4);
+        }    
+        listener4 = function () {
+            if (transferirEntreMaos("dedos2", "dedos1", 4)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 2; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir4.addEventListener("click", listener4);
+    }
+}
+
+function transferir3pra4() {
+    if (proxydedos.dedos3 >= 1) {
+        avisojogada2.textContent = "Selecione a quantidade de dedos:"
+        botaotransferir21.hidden = false;
+        ablebutton(botaotransferir21);
+        listener1 = function () {
+            if (transferirEntreMaos("dedos3", "dedos4", 1)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir21.addEventListener("click", listener1);
+    }
+
+    if (proxydedos.dedos3 >= 2) {
+        if (proxydedos.dedos3 == 3 && proxydedos.dedos4 == 4){
+            botaotransferir22.hidden = true;
+        disablebutton(botaotransferir22);
+        } else {
+        botaotransferir22.hidden = false;
+        ablebutton(botaotransferir22);
+    }
+        listener2 = function () {
+            if (transferirEntreMaos("dedos3", "dedos4", 2)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir22.addEventListener("click", listener2);
+    }
+
+    if (proxydedos.dedos3 >= 3) {
+        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
+            botaotransferir23.hidden = false;
+            ablebutton(botaotransferir23);
+        }    
+        listener3 = function () {
+            if (transferirEntreMaos("dedos3", "dedos4", 3)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir23.addEventListener("click", listener3);
+    }
+
+    if (proxydedos.dedos3 == 4) {
+        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
+            botaotransferir24.hidden = false;
+            ablebutton(botaotransferir24);
+        }    
+        listener4 = function () {
+            if (transferirEntreMaos("dedos3", "dedos4", 4)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir24.addEventListener("click", listener4);
+    }
+}
+
+function transferir4pra3() {
+    if (proxydedos.dedos4 >= 1) {
+        avisojogada2.textContent = "Selecione a quantidade de dedos:"
+        botaotransferir21.hidden = false;
+        ablebutton(botaotransferir21);
+        listener1 = function () {
+            if (transferirEntreMaos("dedos4", "dedos3", 1)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir21.addEventListener("click", listener1);
+    }
+
+    if (proxydedos.dedos4 >= 2) {
+        if (proxydedos.dedos4 == 3 && proxydedos.dedos3 == 4){
+            botaotransferir22.hidden = true;
+        disablebutton(botaotransferir22);
+        } else {
+        botaotransferir22.hidden = false;
+        ablebutton(botaotransferir22);
+    }
+        listener2 = function () {
+            if (transferirEntreMaos("dedos4", "dedos3", 2)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir22.addEventListener("click", listener2);
+    }
+
+    if (proxydedos.dedos4 >= 3) {
+        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
+            botaotransferir23.hidden = false;
+            ablebutton(botaotransferir23);
+        }    
+        listener3 = function () {
+            if (transferirEntreMaos("dedos4", "dedos3", 3)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir23.addEventListener("click", listener3);
+    }
+
+    if (proxydedos.dedos4 == 4) {
+        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
+            botaotransferir24.hidden = false;
+            ablebutton(botaotransferir24);
+        }    
+        listener4 = function () {
+            if (transferirEntreMaos("dedos4", "dedos3", 4)) {
+                desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
+                proxyTurno.valor = 1; // Passa o turno ao próximo jogador
+            }
+        };
+        botaotransferir24.addEventListener("click", listener4);
+    }
+}
+
+
+function preeação1() {
+    botaomao1.removeEventListener("click", preeação1)
+    botaomao2.removeEventListener("click", preeação2)
+    avisojogada.textContent = "Selecione seu alvo!"
+    botaomao1.style.border = "solid red"
+        if(proxydedos.dedos3 > 0){
+        ablebutton(botaomao3);
+        botaomao3.addEventListener("click", ação1pra3);}
+        if(proxydedos.dedos4 > 0){
+        ablebutton(botaomao4);
+        botaomao4.addEventListener("click", ação1pra4);}
+        ablebutton(botaomao1)
+        botaomao1.addEventListener("click", mao1selecionar)
+        
+        ablebutton(botaomao2)
+        botaomao2.addEventListener("click", tranferir1pra2)
+    }
+    
+
 function mao1selecionar() {
 botaomao3.removeEventListener("click", ação1pra3)
         botaomao4.removeEventListener("click", ação1pra4)
@@ -340,9 +692,19 @@ botaomao3.removeEventListener("click", ação1pra3)
         botaomao1.style.border = "none"
         avisojogada.textContent = ""
         botaomao1.addEventListener("click",preeação1)
+        botaomao2.addEventListener("click", preeação2)
+        botaotransferir1.hidden = true
+        botaotransferir2.hidden = true
+        botaotransferir3.hidden = true
+        botaotransferir4.hidden = true
+        disablebutton(botaotransferir2)
+        disablebutton(botaotransferir3)
+        disablebutton(botaotransferir4)
+        botaomao2.removeEventListener("click", tranferir1pra2)
 }
 
 function preeação2() {
+botaomao1.removeEventListener("click", preeação1)    
 botaomao2.removeEventListener("click", preeação2)
 avisojogada.textContent = "Selecione seu alvo!"
 botaomao2.style.border = "solid red"
@@ -354,19 +716,34 @@ if(proxydedos.dedos3 > 0){
     botaomao4.addEventListener("click", ação2pra4);}
     ablebutton(botaomao2)
     botaomao2.addEventListener("click", mao2selecionar)
+
+    ablebutton(botaomao1)
+        botaomao1.addEventListener("click", transferir2pra1)
 }
+
 function mao2selecionar() {
 botaomao3.removeEventListener("click", ação2pra3)
         botaomao4.removeEventListener("click", ação2pra4)
         botaomao2.removeEventListener("click", mao2selecionar)
         botaomao2.style.border = "none"
         avisojogada.textContent = ""
+        botaomao1.addEventListener("click", preeação1)
         botaomao2.addEventListener("click",preeação2)
+
+        botaotransferir1.hidden = true
+        botaotransferir2.hidden = true
+        botaotransferir3.hidden = true
+        botaotransferir4.hidden = true
+        disablebutton(botaotransferir2)
+        disablebutton(botaotransferir3)
+        disablebutton(botaotransferir4)
+        botaomao1.removeEventListener("click", transferir2pra1)
 }
 
 
 function preeação3() {
 botaomao3.removeEventListener("click", preeação3)
+botaomao4.removeEventListener("click", preeação4)
 botaomao3.style.border = "solid red"
 avisojogada2.textContent = "Selecione seu alvo!"
 if(proxydedos.dedos1 > 0){
@@ -377,6 +754,9 @@ if(proxydedos.dedos1 > 0){
     botaomao2.addEventListener("click", ação3pra2);}
     ablebutton(botaomao3)
     botaomao3.addEventListener("click", mao3selecionar)
+
+    ablebutton(botaomao4)
+        botaomao4.addEventListener("click", transferir3pra4)
 }
 function mao3selecionar() {
 botaomao1.removeEventListener("click", ação3pra1)
@@ -385,9 +765,20 @@ botaomao1.removeEventListener("click", ação3pra1)
         botaomao3.style.border = "none"
         avisojogada2.textContent = ""
         botaomao3.addEventListener("click",preeação3)
+        botaomao4.addEventListener("click", preeação4)
+
+        botaotransferir21.hidden = true
+        botaotransferir22.hidden = true
+        botaotransferir23.hidden = true
+        botaotransferir24.hidden = true
+        disablebutton(botaotransferir22)
+        disablebutton(botaotransferir23)
+        disablebutton(botaotransferir24)
+        botaomao4.removeEventListener("click", transferir3pra4)
 }
 
 function preeação4() {
+botaomao3.removeEventListener("click", preeação3)
 botaomao4.removeEventListener("click",preeação4)
 botaomao4.style.border = "solid red"
 avisojogada2.textContent = "Selecione seu alvo!"
@@ -399,6 +790,9 @@ if(proxydedos.dedos1 > 0){
     botaomao2.addEventListener("click", ação4pra2);}
     ablebutton(botaomao4)
     botaomao4.addEventListener("click", mao4selecionar)
+
+    ablebutton(botaomao3)
+        botaomao3.addEventListener("click", transferir4pra3)
 }
 function mao4selecionar() {
 botaomao1.removeEventListener("click", ação4pra1)
@@ -406,8 +800,20 @@ botaomao1.removeEventListener("click", ação4pra1)
         botaomao4.removeEventListener("click", mao4selecionar)
         botaomao4.style.border = "none"
         avisojogada2.textContent = ""
+        botaomao3.addEventListener("click", preeação3)
         botaomao4.addEventListener("click",preeação4)
+
+        botaotransferir21.hidden = true
+        botaotransferir22.hidden = true
+        botaotransferir23.hidden = true
+        botaotransferir24.hidden = true
+        disablebutton(botaotransferir22)
+        disablebutton(botaotransferir23)
+        disablebutton(botaotransferir24)
+        botaomao3.removeEventListener("click", transferir4pra3)
 }
+
+
 
 function ação1pra3() {
 proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3

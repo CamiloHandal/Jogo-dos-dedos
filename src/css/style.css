@@ -175,10 +175,9 @@ footer div{
     left: 10px;
 }
 
-button {
-    border: 2px solid black;
+main button {
+    padding: 4%;
     background-color: aliceblue;
-
     cursor: pointer;
 }
 #volume-change_btn {
