@@ -27,6 +27,12 @@ header h1 {
     text-shadow: 2px 2px 0px white;
     margin: 7% 0% 8% 0%;
 }
+header h2 {
+    color: white;
+    font-size: clamp(4vw, 4vw, 1000%);
+    text-shadow: 2px 2px 0px rgb(0, 0, 0);
+    margin: -5% 0% 5% 0%;
+}
 
 a {
     text-decoration: none;
@@ -45,7 +51,7 @@ header button {
 header > button:first-of-type {
     background-color: coral;
     border: 2px solid yellow;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 header > button:last-child {
     background-color: black;
@@ -55,39 +61,47 @@ header > button:last-child {
 
 /* JOGO */
 main {
+    background-color: aliceblue;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+main > div{
+    margin-left: 0%;
+}
+main > p {
+    margin-left: 0%;
 }
 
 .maos {
     display: block;
     float: right;
     margin: 10%;
+    margin-left: 30%;
     border: none;
 }
 .maos img {
-    width: 300px;
-    height: 300px;
+    width: 16vw;
+    height: 20.5vw;
     object-fit: cover;
 }
 
     #mao1 {
-        transform: scaleX(-1);
+        border: none;
     }
 
     #mao2 {
-        border: none;
+        transform: scaleX(-1);
     }
 
     #mao3 {
         transform: rotate(180deg);
-        transform: scaleY(-1);
     }
 
     #mao4 {
         transform: rotate(180deg);
+        transform: scaleY(-1);
     }
 /* REGRAS */
 footer {
@@ -169,7 +183,9 @@ button {
 }
 #volume-change_btn {
     border-radius: 20px;
+    background-color: white;
 }
 #music-change_btn {
     border-radius: 50px;
+    background-color: white;
 }
