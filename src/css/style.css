@@ -23,7 +23,7 @@ header {
     align-items: center;
 }
 header h1 {
-    font-size: 1000%;
+    font-size: clamp(10vw, 10vw, 1000%);
     text-shadow: 2px 2px 0px white;
     margin: 7% 0% 8% 0%;
 }
@@ -98,6 +98,7 @@ footer {
     color: white;
     background-color: rgb(15, 15, 15);
     border: 1px dotted red;
+    overflow: hidden;
 }
 
 footer h1 {
@@ -137,9 +138,9 @@ footer ul li{
     height: 230px;
     align-items: center;
     justify-content: center;
-    font-size: 150%;
+    font-size: clamp(1vw, 1.4vw, 1.5vw);
     box-shadow: 0px 0px 5px white;
-    transition: box-shadow 1s, scale 0.5s;
+    transition: box-shadow 1s, scale 0.5s, transform 1s;
 }
 
 footer ul li:hover {
@@ -150,4 +151,25 @@ footer ul li:hover {
 footer div{
     margin: 6.5% 0% -5% 0%;
     width: 90%;
+}
+
+
+/* BUTTONS */
+#music {
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+}
+
+button {
+    border: 2px solid black;
+    background-color: aliceblue;
+
+    cursor: pointer;
+}
+#volume-change_btn {
+    border-radius: 20px;
+}
+#music-change_btn {
+    border-radius: 50px;
 }

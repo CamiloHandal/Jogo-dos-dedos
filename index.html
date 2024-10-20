@@ -19,6 +19,22 @@
 
     <!-- Botão para trocar música -->
     <button id="botaoTrocar">Trocar Música</button>
+    <!-- Reprodutor de áudio -->
+    <audio id="musica" loop autoplay>
+        <source id="sourceMusica" src="./src/aud/lobby-classic-game.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <div id="music">
+        <button id="volume-change_btn">
+            <img id="imagemmusica" src="https://www.svgrepo.com/show/532519/volume-max.svg" alt="Controle de som" width="35">
+        </button>
+
+        <button id="music-change_btn">
+            <img src="https://www.svgrepo.com/show/470168/update.svg" alt="" width="20">
+        </button>
+    </div>
+
     <header>
         <h1>The Finger's Game</h1>
 
@@ -43,6 +59,12 @@
             <button href="" class="maos" id="mao1">
                 <img id="imgmao1" src="https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=" alt="">
             </button>
+            <button href="" class="maos" id="mao4">
+                <img src="https://media.istockphoto.com/id/139378228/photo/finger-number-1.jpg?s=612x612&w=0&k=20&c=wg6ZmkR3TJkUpQd6TCIHJk5fxXCXfKtz0nHTdB9a09k=" alt="">
+            </button>
+            <button href="" class="maos" id="mao1">
+                <img id="imgmao1" src="https://media.istockphoto.com/id/139253304/pt/foto/dedo-número-2-série.jpg?s=1024x1024&w=is&k=20&c=V9AmjKaPng0cA6zK8mATBoSIwC_T9G4PkVjpXcGE-q0=" alt="">
+            </button>
         </div>
         <div></div>
     </main>
@@ -63,6 +85,20 @@
                 <li>É inválido fazer movimentos equivalentes button "passar button vez". Por exemplo, se você tem 2 dedos em uma mão e 1 na outra, você não pode passar um dedo da mão com dois para button com um, pois isso seria irrelevante.</li>
             </ul>
         </div>     
+        <div>
+            <ul>
+                <li>Quando uma mão tem 5 dedos, ela é "eliminada", perdendo todos os dedos.</li>
+                <li>Você perde quando não tem mais dedos.</li>
+                <li>O jogo funciona em rodadas de uma única ação cada, onde o jogador que irá iniciar pode ser escolhido da maneira que eles desejarem.</li>
+            </ul>
+        </div>
+        
+        <div>
+            <ul>
+                <li>A cada rodada há duas jogadas possíveis: adicionar button quantidade de dedos de uma das suas mãos para uma do oponente, ou transferir qualquer quantidade de uma das suas mãos para button outra.</li>
+                <li>É inválido fazer movimentos equivalentes button "passar button vez". Por exemplo, se você tem 2 dedos em uma mão e 1 na outra, você não pode passar um dedo da mão com dois para button com um, pois isso seria irrelevante.</li>
+            </ul>
+        </div>
     </footer>
 
     <script src="./src/js/script.js"></script>
@@ -206,5 +242,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alert("Clicou!")
     })
     </script>
+    <script src="./src/js/script.js"></script>
 </body>
 </html>
