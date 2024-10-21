@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo dos dedos</title>
+
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    <!-- Reprodutor de áudio -->
+    <audio id="musica" loop autoplay>
+        <source id="sourceMusica" src="" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <div id="music">
+        <button id="volume-change_btn">
+            <img id="imagemmusica" src="https://www.svgrepo.com/show/532519/volume-max.svg" alt="Controle de som" width="35">
+        </button>
+
+        <button id="music-change_btn">
+            <img src="https://www.svgrepo.com/show/470168/update.svg" alt="" width="20">
+        </button>
+    </div>
+
+    <header>
+        <h1>Jogo dos Dedos</h1>
+        <h2>"The Finger's Game"</h2>
+
+        <button onclick="scrollToGame()" id="btn-game">Play</button>
+        <button onclick="scrollToRules()" id="btn-rules">Rules</button>
+    </header>
+
+    <main id="Game">
+        <div></div>
+        <div style="margin-left: -6%;">
+            <button href="" class="maos" id="mao3">
+                <img id="imgmao3" src="/src/img/dedo 1 hiro.png" alt="">
+            </button>
+            <button href="" class="maos" id="mao2">
+                <img id="imgmao2" src="/src/img/dedo 1 hiro.png" alt="">
+            </button>
+        </div>
+        <div>
+            <p id="avisojogada2"></p>
+            <button id="botaotransferir2-1" hidden disabled>1</button>
+            <button id="botaotransferir2-2" hidden disabled>2</button>
+            <button id="botaotransferir2-3" hidden disabled>3</button>
+            <button id="botaotransferir2-4" hidden disabled>4</button>
+            <button id="botaotransferir2-5" hidden disabled>5</button>
+            <br>
+            <p id="avisoturno">
+            </p>
+            <br>
+            <p id="avisojogada"> </p>
+                <button id="botaotransferir1" hidden disabled>1</button>
+                <button id="botaotransferir2" hidden disabled>2</button>
+                <button id="botaotransferir3" hidden disabled>3</button>
+                <button id="botaotransferir4" hidden disabled>4</button>
+                <button id="botaotransferir5" hidden disabled>5</button>
+        </div>
+        <div>
+            <button href="" class="maos" id="mao4">
+                <img id="imgmao4" src="/src/img/dedo 1 hiro.png" alt="">
+            </button>
+            <button href="" class="maos" id="mao1">
+                <img id="imgmao1" src="./src/img/dedo 1 hiro.png" alt="">
+            </button>
+        </div>
+        <div></div>
+    </main>
+
+    <footer id="Rules">
+        <h1>Regras</h1>
+        <div>
+            <ul>
+                <li>Quando uma mão tem 5 dedos, ela é "eliminada", perdendo todos os dedos.</li>
+                <li>Você perde quando não tem mais dedos.</li>
+                <li>O jogo funciona em rodadas de uma única ação cada, onde o jogador que irá iniciar pode ser escolhido da maneira que eles desejarem.</li>
+            </ul>
+        </div>
+        
+        <div>
+            <ul>
+                <li>A cada rodada há duas jogadas possíveis: adicionar button quantidade de dedos de uma das suas mãos para uma do oponente, ou transferir qualquer quantidade de uma das suas mãos para button outra.</li>
+                <li>É inválido fazer movimentos equivalentes button "passar button vez". Por exemplo, se você tem 2 dedos em uma mão e 1 na outra, você não pode passar um dedo da mão com dois para button com um, pois isso seria irrelevante.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/src/js/script-test.js"></script>
+</body>
+</html>
