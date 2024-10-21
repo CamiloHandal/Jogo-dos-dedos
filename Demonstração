@@ -5,7 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo dos dedos</title>
 
-    <link rel="stylesheet" href="./src/css/style.css">
+    <style>
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+
+/* HOME */
+header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(181, 210, 236);
+    align-items: center;
+}
+header h1 {
+    font-size: clamp(10vw, 10vw, 1000%);
+    text-shadow: 2px 2px 0px white;
+    margin: 7% 0% 8% 0%;
+}
+header h2 {
+    color: white;
+    font-size: clamp(4vw, 4vw, 1000%);
+    text-shadow: 2px 2px 0px rgb(0, 0, 0);
+    margin: -5% 0% 5% 0%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+header button {
+    cursor: pointer;
+    width: 30%;
+    height: 10%;
+    font-size: 250%;
+    border-radius: 30px;
+    margin: 0.5%;
+}
+header > button:first-of-type {
+    background-color: coral;
+    border: 2px solid yellow;
+    color: rgb(255, 255, 255);
+}
+header > button:last-child {
+    background-color: black;
+    border: 2px solid orange;
+    color: white;
+}
+
+/* JOGO */
+main {
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main > div{
+    margin-left: 0%;
+}
+main > p {
+    margin-left: 0%;
+}
+
+.maos {
+    display: block;
+    float: right;
+    margin: 10%;
+    margin-left: 30%;
+    border: none;
+}
+.maos img {
+    width: 16vw;
+    height: 20.5vw;
+    object-fit: cover;
+}
+
+    #mao1 {
+        border: none;
+    }
+
+    #mao2 {
+        transform: scaleX(-1);
+    }
+
+    #mao3 {
+        transform: rotate(180deg);
+    }
+
+    #mao4 {
+        transform: rotate(180deg);
+        transform: scaleY(-1);
+    }
+/* REGRAS */
+footer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgb(15, 15, 15);
+    border: 1px dotted red;
+    overflow: hidden;
+}
+
+footer h1 {
+    margin-top: 2.5%;
+    padding: 1%;
+    background-color: black;
+    padding: 1% 2.5%;
+    text-align: center;
+    border-radius: 60px;
+    border: 3px solid orange;
+    box-shadow: 0px 0px 10px orange;
+    transition: box-shadow 1s;
+    font-size: 500%;
+}
+footer h1:hover {
+    box-shadow: 0px 0px 20px orange;
+}
+
+footer ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+footer ul li{
+    display: flex;
+    padding: 25px;
+    background-color: black;
+    border-radius: 30px;
+    border: 2px solid white;
+    margin: 2%;
+    width: 30%;
+    height: 230px;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1vw, 1.4vw, 1.5vw);
+    box-shadow: 0px 0px 5px white;
+    transition: box-shadow 1s, scale 0.5s, transform 1s;
+}
+
+footer ul li:hover {
+    box-shadow: 0 0 25px white;
+    scale: 1.5;
+}
+
+footer div{
+    margin: 6.5% 0% -5% 0%;
+    width: 90%;
+}
+
+
+/* BUTTONS */
+#music {
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+}
+
+main button {
+    padding: 4%;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+#volume-change_btn {
+    border-radius: 20px;
+    background-color: white;
+}
+#music-change_btn {
+    border-radius: 50px;
+    background-color: white;
+}</style>
 </head>
 <body>
     <!-- Reprodutor de áudio -->
