@@ -104,7 +104,9 @@ let skincamilo = ["/src/img/dedo 0 camilo.png","/src/img/dedo 1 camilo.png","/sr
 
 let skinbilibio = ["/src/img/dedo 0 bilibio.png","/src/img/dedo 1 bilibio.png","/src/img/dedo 2 bilibio.png","/src/img/dedo 3 bilibio.png","/src/img/dedo 4 bilibio.png","/src/img/dedo 5 bilibio.png"]
 
-let skin = skinhiro
+let skins = [skinhiro, skinbilibio, skincamilo]
+
+let skin = skins[Math.floor(Math.random() * 3)]
 
 let imagem1 = document.getElementById("imgmao1");
 
@@ -258,6 +260,8 @@ if (proxydedos.dedos4 == 0){
 }
 }
 }
+
+verificarDedos()
 
 let skinh = document.getElementById("skinh") 
 
