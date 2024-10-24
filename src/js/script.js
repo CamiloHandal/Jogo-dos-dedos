@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const source = document.getElementById("sourceMusica");
     // Lista de músicas
     const musicas = [
-        "/src/aud/lobby-classic-game.mp3",
-        "/src/aud/answer_30sec.mp3",
-        "/src/aud/alt02-answer_030sec.mp3",
-        "/src/aud/alt03-answer_030sec.mp3",
-        "/src/aud/alt02-answer_060sec.mp3"
+        "./src/aud/lobby-classic-game.mp3",
+        "./src/aud/answer_30sec.mp3",
+        "./src/aud/alt02-answer_030sec.mp3",
+        "./src/aud/alt03-answer_030sec.mp3",
+        "./src/aud/alt02-answer_060sec.mp3"
     ];
 
     // Índice atual da música
