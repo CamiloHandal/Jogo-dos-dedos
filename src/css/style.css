@@ -179,6 +179,7 @@ footer div{
     position: fixed;
     bottom: 20px;
     left: 10px;
+    z-index: 1000;
 }
 
 main button {
