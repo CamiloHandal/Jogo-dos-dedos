@@ -62,7 +62,7 @@ header > button:last-child {
 /* JOGO */
 main {
     background-color: aliceblue;
-    height: 100vh;
+    height: 101vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,6 +75,8 @@ main > p {
 }
 
 .maos {
+    width: 18vw;
+    height: 20.70vw;
     display: block;
     float: right;
     margin: 10%;
@@ -83,7 +85,7 @@ main > p {
 }
 .maos img {
     width: 16vw;
-    height: 20.5vw;
+    height: 19.25vw;
     object-fit: cover;
 }
 
@@ -169,12 +171,15 @@ footer div{
 
 .divskins {
     display: grid;
-    margin: 2.5%;
-    
+    margin: 1%;
 }
 
 
 /* BUTTONS */
+button {
+    cursor: pointer;
+}
+
 #music {
     position: fixed;
     bottom: 20px;
