@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const source = document.getElementById("sourceMusica");
     // Lista de músicas
     const musicas = [
-        "/src/aud/lobby-classic-game.mp3",
-        "/src/aud/answer_30sec.mp3",
-        "/src/aud/alt02-answer_030sec.mp3",
-        "/src/aud/alt03-answer_030sec.mp3",
-        "/src/aud/alt02-answer_060sec.mp3"
+        "./src/aud/lobby-classic-game.mp3",
+        "./src/aud/answer_30sec.mp3",
+        "./src/aud/alt02-answer_030sec.mp3",
+        "./src/aud/alt03-answer_030sec.mp3",
+        "./src/aud/alt02-answer_060sec.mp3"
     ];
 
     // Índice atual da música
@@ -106,7 +106,9 @@ let skinbilibio = ["./src/img/dedo 0 bilibio.png","./src/img/dedo 1 bilibio.png"
 
 let skins = [skinhiro, skinbilibio, skincamilo]
 
-let skin = skins[Math.floor(Math.random() * 3)]
+let skin1 = skins[Math.floor(Math.random() * 3)]
+
+let skin2 = skins[Math.floor(Math.random() * 3)]
 
 let imagem1 = document.getElementById("imgmao1");
 
@@ -130,16 +132,16 @@ let botaotransferir24 = document.getElementById("botaotransferir2-4")
 //função para verificar a quantidade de dedos e alterar a imagem
 function verificarDedos() {
 if (proxydedos.dedos1 == 1) {
-mudarImagem(imagem1, skin[1]);
+mudarImagem(imagem1, skin1[1]);
 }
 if(proxydedos.dedos1 == 2) {
-mudarImagem(imagem1, skin[2]);
+mudarImagem(imagem1, skin1[2]);
 }
 if(proxydedos.dedos1 == 3) {
-mudarImagem(imagem1, skin[3]);
+mudarImagem(imagem1, skin1[3]);
 }
 if(proxydedos.dedos1 == 4) {
-mudarImagem(imagem1, skin[4]);
+mudarImagem(imagem1, skin1[4]);
 }
 if(proxydedos.dedos1 >= 5) {
 disablebutton(botaomao1)
@@ -148,14 +150,14 @@ if (proxydedos.dedos1 >= 5){
     disablebutton(botaomao1)
     botaomao1.removeEventListener("click", preeação1)
 }
-mudarImagem(imagem1, skin[5]);
+mudarImagem(imagem1, skin1[5]);
 setTimeout(() => {
 proxydedos.dedos1 = 0
 }, 750);
 
 }
 if(proxydedos.dedos1 == 0) {
-mudarImagem(imagem1, skin[0]);
+mudarImagem(imagem1, skin1[0]);
 if (proxydedos.dedos1 == 0){
     disablebutton(botaomao1)
     botaomao1.removeEventListener("click", preeação1)
@@ -164,16 +166,16 @@ if (proxydedos.dedos1 == 0){
 
 
 if (proxydedos.dedos2 == 1) {
-mudarImagem(imagem2, skin[1]);
+mudarImagem(imagem2, skin1[1]);
 }
 if(proxydedos.dedos2 == 2) {
-mudarImagem(imagem2, skin[2]);
+mudarImagem(imagem2, skin1[2]);
 }
 if(proxydedos.dedos2 == 3) {
-mudarImagem(imagem2, skin[3]);
+mudarImagem(imagem2, skin1[3]);
 }
 if(proxydedos.dedos2 == 4) {
-mudarImagem(imagem2, skin[4]);
+mudarImagem(imagem2, skin1[4]);
 }
 if(proxydedos.dedos2 >= 5) {
 disablebutton(botaomao2)
@@ -182,13 +184,13 @@ if (proxydedos.dedos2 >= 5){
     disablebutton(botaomao2)
     botaomao2.removeEventListener("click", preeação2)
 }
-mudarImagem(imagem2, skin[5]);
+mudarImagem(imagem2, skin1[5]);
 setTimeout(() => {
     proxydedos.dedos2 = 0
 }, 750);
 }
 if(proxydedos.dedos2 == 0) {
-mudarImagem(imagem2, skin[0]);
+mudarImagem(imagem2, skin1[0]);
 if (proxydedos.dedos2 == 0){
     disablebutton(botaomao2)
     botaomao2.removeEventListener("click", preeação2)
@@ -196,16 +198,16 @@ if (proxydedos.dedos2 == 0){
 }
 
 if (proxydedos.dedos3 == 1) {
-mudarImagem(imagem3, skin[1]);
+mudarImagem(imagem3, skin2[1]);
 }
 if(proxydedos.dedos3 == 2) {
-mudarImagem(imagem3, skin[2]);
+mudarImagem(imagem3, skin2[2]);
 }
 if(proxydedos.dedos3 == 3) {
-mudarImagem(imagem3, skin[3]);
+mudarImagem(imagem3, skin2[3]);
 }
 if(proxydedos.dedos3 == 4) {
-mudarImagem(imagem3, skin[4]);
+mudarImagem(imagem3, skin2[4]);
 }
 if(proxydedos.dedos3 >= 5) {
 disablebutton(botaomao3)
@@ -214,14 +216,14 @@ if (proxydedos.dedos3 >= 5){
     disablebutton(botaomao3)
     botaomao3.removeEventListener("click", preeação3)
 }
-mudarImagem(imagem3, skin[5])
+mudarImagem(imagem3, skin2[5])
 setTimeout(() => {
 proxydedos.dedos3 = 0
 }, 750);
 
 }
 if(proxydedos.dedos3 == 0) {
-mudarImagem(imagem3, skin[0]);
+mudarImagem(imagem3, skin2[0]);
 if (proxydedos.dedos3 == 0){
     disablebutton(botaomao3)
     botaomao3.removeEventListener("click", preeação3)
@@ -229,16 +231,16 @@ if (proxydedos.dedos3 == 0){
 }
 
 if (proxydedos.dedos4 == 1) {
-mudarImagem(imagem4, skin[1]);
+mudarImagem(imagem4, skin2[1]);
 }
 if(proxydedos.dedos4 == 2) {
-mudarImagem(imagem4, skin[2]);
+mudarImagem(imagem4, skin2[2]);
 }
 if(proxydedos.dedos4 == 3) {
-mudarImagem(imagem4, skin[3]);
+mudarImagem(imagem4, skin2[3]);
 }
 if(proxydedos.dedos4 == 4) {
-mudarImagem(imagem4, skin[4]);
+mudarImagem(imagem4, skin2[4]);
 }
 if(proxydedos.dedos4 >= 5) {
 disablebutton(botaomao4)
@@ -247,13 +249,13 @@ if (proxydedos.dedos4 >= 5){
     disablebutton(botaomao4)
     botaomao4.removeEventListener("click", preeação4)
 }
-mudarImagem(imagem4, skin[5])
+mudarImagem(imagem4, skin2[5])
 setTimeout(() => {
 proxydedos.dedos4 = 0
 }, 750);
 }
 if(proxydedos.dedos4 == 0) {
-mudarImagem(imagem4, skin[0]);
+mudarImagem(imagem4, skin2[0]);
 if (proxydedos.dedos4 == 0){
     disablebutton(botaomao4)
     botaomao4.removeEventListener("click", preeação4)
@@ -263,14 +265,20 @@ if (proxydedos.dedos4 == 0){
 
 verificarDedos()
 
-let skinh = document.getElementById("skinh") 
+let skinh1 = document.getElementById("skinh1") 
 
-let skinb = document.getElementById("skinb") 
+let skinb1 = document.getElementById("skinb1") 
 
-let skinc = document.getElementById("skinc") 
+let skinc1 = document.getElementById("skinc1") 
 
-skinh.addEventListener("click", function (){
-    skin = skinhiro
+let skinh2 = document.getElementById("skinh2") 
+
+let skinb2 = document.getElementById("skinb2") 
+
+let skinc2 = document.getElementById("skinc2") 
+
+skinh1.addEventListener("click", function (){
+    skin1 = skinhiro
     proxydedos.dedos1 = proxydedos.dedos1
     proxydedos.dedos2 = proxydedos.dedos2
     proxydedos.dedos3 = proxydedos.dedos3
@@ -278,8 +286,8 @@ skinh.addEventListener("click", function (){
     console.log(skin)
 })
 
-skinb.addEventListener("click", function (){
-    skin = skinbilibio
+skinb1.addEventListener("click", function (){
+    skin1 = skinbilibio
     proxydedos.dedos1 = proxydedos.dedos1
     proxydedos.dedos2 = proxydedos.dedos2
     proxydedos.dedos3 = proxydedos.dedos3
@@ -287,8 +295,35 @@ skinb.addEventListener("click", function (){
     console.log(skin)
 })
 
-skinc.addEventListener("click", function (){
-    skin = skincamilo
+skinc1.addEventListener("click", function (){
+    skin1 = skincamilo
+    proxydedos.dedos1 = proxydedos.dedos1
+    proxydedos.dedos2 = proxydedos.dedos2
+    proxydedos.dedos3 = proxydedos.dedos3
+    proxydedos.dedos4 = proxydedos.dedos4
+    console.log(skin)
+})
+
+skinh2.addEventListener("click", function (){
+    skin2 = skinhiro
+    proxydedos.dedos1 = proxydedos.dedos1
+    proxydedos.dedos2 = proxydedos.dedos2
+    proxydedos.dedos3 = proxydedos.dedos3
+    proxydedos.dedos4 = proxydedos.dedos4
+    console.log(skin)
+})
+
+skinb2.addEventListener("click", function (){
+    skin2 = skinbilibio
+    proxydedos.dedos1 = proxydedos.dedos1
+    proxydedos.dedos2 = proxydedos.dedos2
+    proxydedos.dedos3 = proxydedos.dedos3
+    proxydedos.dedos4 = proxydedos.dedos4
+    console.log(skin)
+})
+
+skinc2.addEventListener("click", function (){
+    skin2 = skincamilo
     proxydedos.dedos1 = proxydedos.dedos1
     proxydedos.dedos2 = proxydedos.dedos2
     proxydedos.dedos3 = proxydedos.dedos3
@@ -542,10 +577,13 @@ function tranferir1pra2() {
     }
 
     if (proxydedos.dedos1 >= 3) {
-        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
-            botaotransferir3.hidden = false;
-            ablebutton(botaotransferir3);
-        }    
+        if (proxydedos.dedos1 == 3 && proxydedos.dedos2 == 3 || proxydedos.dedos1 == 3 && proxydedos.dedos2 == 4 || proxydedos.dedos1 == 4 && proxydedos.dedos2 == 3){
+            botaotransferir3.hidden = true;
+        disablebutton(botaotransferir3);
+        } else {
+        botaotransferir3.hidden = false;
+        ablebutton(botaotransferir3);
+    }
         listener3 = function () {
             if (transferirEntreMaos("dedos1", "dedos2", 3)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
@@ -556,10 +594,13 @@ function tranferir1pra2() {
     }
 
     if (proxydedos.dedos1 == 4) {
-        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
+        if (proxydedos.dedos1 == 4 && proxydedos.dedos2 == 4 || proxydedos.dedos1 == 4 && proxydedos.dedos2 == 3 || proxydedos.dedos1 == 4 && proxydedos.dedos2 == 2){
+            botaotransferir4.hidden = true;
+        disablebutton(botaotransferir4);
+        } else {
         botaotransferir4.hidden = false;
         ablebutton(botaotransferir4);
-    }    
+    }
         listener4 = function () {
             if (transferirEntreMaos("dedos1", "dedos2", 4)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
@@ -602,10 +643,13 @@ function transferir2pra1() {
     }
 
     if (proxydedos.dedos2 >= 3) {
-        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
-            botaotransferir3.hidden = false;
-            ablebutton(botaotransferir3);
-        }    
+        if (proxydedos.dedos2 == 3 && proxydedos.dedos1 == 3 || proxydedos.dedos2 == 3 && proxydedos.dedos1 == 4 || proxydedos.dedos2 == 4 && proxydedos.dedos1 == 3){
+            botaotransferir3.hidden = true;
+        disablebutton(botaotransferir3);
+        } else {
+        botaotransferir3.hidden = false;
+        ablebutton(botaotransferir3);
+    }
         listener3 = function () {
             if (transferirEntreMaos("dedos2", "dedos1", 3)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
@@ -616,10 +660,13 @@ function transferir2pra1() {
     }
 
     if (proxydedos.dedos2 == 4) {
-        if (proxydedos.dedos1 + proxydedos.dedos2 <= 5){
-            botaotransferir4.hidden = false;
-            ablebutton(botaotransferir4);
-        }    
+        if (proxydedos.dedos2 == 4 && proxydedos.dedos1 == 4 || proxydedos.dedos2 == 4 && proxydedos.dedos1 == 3 || proxydedos.dedos2 == 4 && proxydedos.dedos1 == 2){
+            botaotransferir4.hidden = true;
+        disablebutton(botaotransferir4);
+        } else {
+        botaotransferir4.hidden = false;
+        ablebutton(botaotransferir4);
+    }
         listener4 = function () {
             if (transferirEntreMaos("dedos2", "dedos1", 4)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
@@ -662,10 +709,13 @@ function transferir3pra4() {
     }
 
     if (proxydedos.dedos3 >= 3) {
-        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
-            botaotransferir23.hidden = false;
-            ablebutton(botaotransferir23);
-        }    
+        if (proxydedos.dedos3 == 3 && proxydedos.dedos4 == 3 || proxydedos.dedos3 == 3 && proxydedos.dedos4 == 4 || proxydedos.dedos3 == 4 && proxydedos.dedos4 == 3){
+            botaotransferir23.hidden = true;
+        disablebutton(botaotransferir23);
+        } else {
+        botaotransferir23.hidden = false;
+        ablebutton(botaotransferir23);
+    }
         listener3 = function () {
             if (transferirEntreMaos("dedos3", "dedos4", 3)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
@@ -676,10 +726,13 @@ function transferir3pra4() {
     }
 
     if (proxydedos.dedos3 == 4) {
-        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
-            botaotransferir24.hidden = false;
-            ablebutton(botaotransferir24);
-        }    
+        if (proxydedos.dedos3 == 4 && proxydedos.dedos4 == 4 || proxydedos.dedos3 == 4 && proxydedos.dedos4 == 3 || proxydedos.dedos3 == 4 && proxydedos.dedos4 == 2){
+            botaotransferir24.hidden = true;
+        disablebutton(botaotransferir24);
+        } else {
+        botaotransferir24.hidden = false;
+        ablebutton(botaotransferir24);
+    }
         listener4 = function () {
             if (transferirEntreMaos("dedos3", "dedos4", 4)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
@@ -723,10 +776,13 @@ function transferir4pra3() {
     }
 
     if (proxydedos.dedos4 >= 3) {
-        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
-            botaotransferir23.hidden = false;
-            ablebutton(botaotransferir23);
-        }    
+        if (proxydedos.dedos4 == 3 && proxydedos.dedos3 == 3 || proxydedos.dedos4 == 3 && proxydedos.dedos3 == 4 || proxydedos.dedos4 == 4 && proxydedos.dedos3 == 3){
+            botaotransferir23.hidden = true;
+        disablebutton(botaotransferir23);
+        } else {
+        botaotransferir23.hidden = false;
+        ablebutton(botaotransferir23);
+    }
         listener3 = function () {
             if (transferirEntreMaos("dedos4", "dedos3", 3)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada
@@ -737,10 +793,13 @@ function transferir4pra3() {
     }
 
     if (proxydedos.dedos4 == 4) {
-        if (proxydedos.dedos3 + proxydedos.dedos4 <= 5){
-            botaotransferir24.hidden = false;
-            ablebutton(botaotransferir24);
-        }    
+        if (proxydedos.dedos4 == 4 && proxydedos.dedos3 == 4 || proxydedos.dedos4 == 4 && proxydedos.dedos3 == 3 || proxydedos.dedos4 == 4 && proxydedos.dedos3 == 2){
+            botaotransferir24.hidden = true;
+        disablebutton(botaotransferir24);
+        } else {
+        botaotransferir24.hidden = false;
+        ablebutton(botaotransferir24);
+    }
         listener4 = function () {
             if (transferirEntreMaos("dedos4", "dedos3", 4)) {
                 desabilitarTransferencia(); // Desabilita botões de transferência após a jogada

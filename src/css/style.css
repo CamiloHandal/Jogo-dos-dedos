@@ -167,6 +167,12 @@ footer div{
     width: 90%;
 }
 
+.divskins {
+    display: grid;
+    margin: 2.5%;
+    
+}
+
 
 /* BUTTONS */
 #music {
