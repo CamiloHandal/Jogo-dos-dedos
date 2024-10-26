@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const source = document.getElementById("sourceMusica");
     // Lista de músicas
     const musicas = [
-        "/src/aud/lobby-classic-game.mp3",
-        "/src/aud/answer_30sec.mp3",
-        "/src/aud/alt02-answer_030sec.mp3",
-        "/src/aud/alt03-answer_030sec.mp3",
-        "/src/aud/alt02-answer_060sec.mp3"
+        "./src/aud/lobby-classic-game.mp3",
+        "./src/aud/answer_30sec.mp3",
+        "./src/aud/alt02-answer_030sec.mp3",
+        "./src/aud/alt03-answer_030sec.mp3",
+        "./src/aud/alt02-answer_060sec.mp3"
     ];
 
     // Índice atual da música
@@ -98,11 +98,11 @@ let proxydedos = new Proxy(dedos, {
     }
 })
 
-let skinhiro = ["/src/img/dedo 0 hiro.png","/src/img/dedo 1 hiro.png","/src/img/dedo 2 hiro.png","/src/img/dedo 3 hiro.png","/src/img/dedo 4 hiro.png","/src/img/dedo 5 hiro.png"]
+let skinhiro = ["./src/img/dedo 0 hiro.png","./src/img/dedo 1 hiro.png","./src/img/dedo 2 hiro.png","./src/img/dedo 3 hiro.png","./src/img/dedo 4 hiro.png","./src/img/dedo 5 hiro.png"]
 
-let skincamilo = ["/src/img/dedo 0 camilo.png","/src/img/dedo 1 camilo.png","/src/img/dedo 2 camilo.png","/src/img/dedo 3 camilo.png","/src/img/dedo 4 camilo.png","/src/img/dedo 5 camilo.png"]
+let skincamilo = ["./src/img/dedo 0 camilo.png","./src/img/dedo 1 camilo.png","./src/img/dedo 2 camilo.png","./src/img/dedo 3 camilo.png","./src/img/dedo 4 camilo.png","./src/img/dedo 5 camilo.png"]
 
-let skinbilibio = ["/src/img/dedo 0 bilibio.png","/src/img/dedo 1 bilibio.png","/src/img/dedo 2 bilibio.png","/src/img/dedo 3 bilibio.png","/src/img/dedo 4 bilibio.png","/src/img/dedo 5 bilibio.png"]
+let skinbilibio = ["./src/img/dedo 0 bilibio.png","./src/img/dedo 1 bilibio.png","./src/img/dedo 2 bilibio.png","./src/img/dedo 3 bilibio.png","./src/img/dedo 4 bilibio.png","./src/img/dedo 5 bilibio.png"]
 
 let skins = [skinhiro, skinbilibio, skincamilo]
 
@@ -329,6 +329,52 @@ skinc2.addEventListener("click", function (){
     proxydedos.dedos3 = proxydedos.dedos3
     proxydedos.dedos4 = proxydedos.dedos4
     console.log(skin)
+})
+
+let cima = document.getElementById("cima")
+let baixo = document.getElementById("baixo")
+
+let vestiario = document.getElementById("vestiario")
+vestiarioaberto = false
+vestiario.addEventListener("click", function () {
+    if (vestiarioaberto == false){
+        ablebutton(skinh1)
+        ablebutton(skinh2)
+        ablebutton(skinb1)
+        ablebutton(skinb2)
+        ablebutton(skinc1)
+        ablebutton(skinc2)
+        cima.hidden = false
+        baixo.hidden = false
+        skinh1.hidden = false
+        skinh2.hidden = false
+        skinb1.hidden = false
+        skinb2.hidden = false
+        skinc1.hidden = false
+        skinc2.hidden = false
+    }
+    if (vestiarioaberto == true) {
+        disablebutton(skinh1)
+        disablebutton(skinh2)
+        disablebutton(skinb1)
+        disablebutton(skinb2)
+        disablebutton(skinc1)
+        disablebutton(skinc2)
+        cima.hidden = true
+        baixo.hidden = true
+        skinh1.hidden = true
+        skinh2.hidden = true
+        skinb1.hidden = true
+        skinb2.hidden = true
+        skinc1.hidden = true
+        skinc2.hidden = true
+    }
+    if (vestiarioaberto == false) {
+        vestiarioaberto = true
+    }
+    else if (vestiarioaberto == true) {
+        vestiarioaberto = false
+    }
 })
 
 // Define o turno aleatoriamente entre 1 ou 2

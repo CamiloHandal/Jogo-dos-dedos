@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo dos dedos</title>
 
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="shortcut icon" href="/src/img/icone.ico">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="shortcut icon" href="./src/img/icone.ico">
 </head>
+
 <body>
-    <!-- Reprodutor de áudio -->
+
+    <!-- Reprodutor de música -->
     <audio id="musica" loop autoplay>
         <source id="sourceMusica" src="" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
 
+    <!-- Botões de música -->
     <div id="music">
         <button id="volume-change_btn">
             <img id="imagemmusica" src="https://www.svgrepo.com/show/532519/volume-max.svg" alt="Controle de som" width="35">
@@ -24,7 +27,9 @@
             <img src="https://www.svgrepo.com/show/470168/update.svg" alt="" width="20">
         </button>
     </div>
+    
 
+    <!--================================================================ HOME PAGE ================================================================-->
     <header>
         <h1>Jogo dos Dedos</h1>
         <h2>"The Finger's Game"</h2>
@@ -32,73 +37,88 @@
         <button onclick="scrollToGame()" id="btn-game">Play</button>
         <button onclick="scrollToRules()" id="btn-rules">Rules</button>
     </header>
+    <!--================================================================ XXXXXXXXX ================================================================-->
 
+
+    <!--================================================================ JOGO ================================================================-->
     <main id="Game">
-        <div></div>
-        <div style="margin-left: -6%;">
+
+        <!-- Coluna 1 - Mãos esquerdas -->
+        <div class="columns-hands" id="column-1_left-hands">
             <button href="" class="maos" id="mao3">
-                <img id="imgmao3" src="/src/img/dedo 1 hiro.png" alt="">
+                <img id="imgmao3" src="./src/img/dedo 1 hiro.png" alt="">
             </button>
             <button href="" class="maos" id="mao2">
-                <img id="imgmao2" src="/src/img/dedo 1 hiro.png" alt="">
+                <img id="imgmao2" src="./src/img/dedo 1 hiro.png" alt="">
             </button>
         </div>
+
         <div>
             <p id="avisojogada2"></p>
-            <button id="botaotransferir2-1" hidden disabled>1</button>
-            <button id="botaotransferir2-2" hidden disabled>2</button>
-            <button id="botaotransferir2-3" hidden disabled>3</button>
-            <button id="botaotransferir2-4" hidden disabled>4</button>
-            <button id="botaotransferir2-5" hidden disabled>5</button>
-            <br>
-            <p id="avisoturno">
-            </p>
-            <br>
-            <p id="avisojogada"> </p>
-                <button id="botaotransferir1" hidden disabled>1</button>
-                <button id="botaotransferir2" hidden disabled>2</button>
-                <button id="botaotransferir3" hidden disabled>3</button>
-                <button id="botaotransferir4" hidden disabled>4</button>
-                <button id="botaotransferir5" hidden disabled>5</button>
+            <button class="btn-hands" id="botaotransferir2-1" hidden disabled>1</button>
+            <button class="btn-hands" id="botaotransferir2-2" hidden disabled>2</button>
+            <button class="btn-hands" id="botaotransferir2-3" hidden disabled>3</button>
+            <button class="btn-hands" id="botaotransferir2-4" hidden disabled>4</button>
+            <button class="btn-hands" id="botaotransferir2-5" hidden disabled>5</button>
+
+            <p id="avisoturno"></p>
+            
+            <p id="avisojogada"></p>
+            <button class="btn-hands" id="botaotransferir1" hidden disabled>1</button>
+            <button class="btn-hands" id="botaotransferir2" hidden disabled>2</button>
+            <button class="btn-hands" id="botaotransferir3" hidden disabled>3</button>
+            <button class="btn-hands" id="botaotransferir4" hidden disabled>4</button>
+            <button class="btn-hands" id="botaotransferir5" hidden disabled>5</button>
         </div>
-        <div>
+
+        <!-- Coluna 2 - Mãos direitas -->
+        <div class="columns-hands" id="column-2_right-hands">
             <button href="" class="maos" id="mao4">
-                <img id="imgmao4" src="/src/img/dedo 1 hiro.png" alt="">
+                <img id="imgmao4" src="./src/img/dedo 1 hiro.png" alt="">
             </button>
             <button href="" class="maos" id="mao1">
-                <img id="imgmao1" src="/src/img/dedo 1 hiro.png" alt="">
+                <img id="imgmao1" src="./src/img/dedo 1 hiro.png" alt="">
             </button>
         </div>
 
-        <div class="divskins"> <p>Cima</p>
-            <button class="botaoskin" id="skinh2">
-            <img src="/src/img/dedo 5 hiro.png" class="imgbutao" alt="">
-        </button>
-        <button class="botaoskin" id="skinb2">
-            <img src="/src/img/dedo 5 bilibio.png" class="imgbutao" alt="">
-        </button>
-        <button class="botaoskin" id="skinc2">
-            <img src="/src/img/dedo 5 camilo.png" class="imgbutao" alt="">
-        </button>
-    </div>
+        <!-- Skins - Player (cima) -->
+        <div class="divskins" >
+            <button id="vestiario" style="border: none;"><img src="./src/img/iconevestiario.png" alt="" style="width: 40px; height: 40px;"></button>
+            <p id="cima" hidden>Cima</p>
+            <button class="botaoskin" id="skinh2" hidden disabled>
+                <img src="./src/img/dedo 5 hiro.png" class="imgbutao" alt="">
+            </button>
+            <button class="botaoskin" id="skinb2" hidden disabled>
+                <img src="./src/img/dedo 5 bilibio.png" class="imgbutao" alt="">
+            </button>
+            <button class="botaoskin" id="skinc2" hidden disabled>
+                <img src="./src/img/dedo 5 camilo.png" class="imgbutao" alt="">
+            </button>
+        </div>
         
-        <div class="divskins">
-            <p>Baixo</p>
-            <button class="botaoskin" id="skinh1">
-                <img src="/src/img/dedo 5 hiro.png" class="imgbutao" alt="">
+        <!-- Skins - Player (baixo) -->
+        <div class="divskins" >
+            <p id="baixo" hidden>Baixo</p>
+            <button class="botaoskin" id="skinh1" hidden disabled>
+                <img src="./src/img/dedo 5 hiro.png" class="imgbutao" alt="">
             </button>
-            <button class="botaoskin" id="skinb1">
-                <img src="/src/img/dedo 5 bilibio.png" class="imgbutao" alt="">
+            <button class="botaoskin" id="skinb1" hidden disabled>
+                <img src="./src/img/dedo 5 bilibio.png" class="imgbutao" alt="">
             </button>
-            <button class="botaoskin" id="skinc1">
-                <img src="/src/img/dedo 5 camilo.png" class="imgbutao" alt="">
+            <button class="botaoskin" id="skinc1" hidden disabled>
+                <img src="./src/img/dedo 5 camilo.png" class="imgbutao" alt="">
             </button>
         </div>
-    </main>
 
+    </main>
+    <!--================================================================ XXXX ================================================================-->
+
+    <!--================================================================ REGRAS ================================================================-->
     <footer id="Rules">
         <h1>Regras</h1>
-        <div>
+
+        <!-- 1º linha - 3 cards -->
+        <div class="lines-cards" id="line-1_3-cards">
             <ul>
                 <li>Quando uma mão tem 5 dedos, ela é "eliminada", perdendo todos os dedos.</li>
                 <li>Você perde quando não tem mais dedos.</li>
@@ -106,14 +126,16 @@
             </ul>
         </div>
         
-        <div>
+        <!-- 2º linha - 2 cards -->
+        <div class="lines-cards" id="line-2_2-cards">
             <ul>
-                <li>A cada rodada há duas jogadas possíveis: adicionar button quantidade de dedos de uma das suas mãos para uma do oponente, ou transferir qualquer quantidade de uma das suas mãos para button outra.</li>
-                <li>É inválido fazer movimentos equivalentes button "passar button vez". Por exemplo, se você tem 2 dedos em uma mão e 1 na outra, você não pode passar um dedo da mão com dois para button com um, pois isso seria irrelevante.</li>
+                <li>A cada rodada há duas jogadas possíveis: adicionar a quantidade de dedos de uma das suas mãos para uma do oponente, ou transferir qualquer quantidade de uma das suas mãos para a outra.</li>
+                <li>É inválido fazer movimentos equivalentes button "passar a vez". Por exemplo, se você tem 2 dedos em uma mão e 1 na outra, você não pode passar um dedo da mão com dois para a com um, pois isso seria irrelevante.</li>
             </ul>
         </div>
     </footer>
+    <!--================================================================ XXXXXX ================================================================-->
 
-    <script src="/src/js/script-test.js"></script>
+    <script src="./src/js/script.js"></script>
 </body>
 </html>

@@ -62,7 +62,7 @@ header > button:last-child {
 /* JOGO */
 main {
     background-color: aliceblue;
-    height: 101vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,11 +80,12 @@ main {
 }
 
 .maos {
+    height: 42vh;
     border: none;
     margin: 8vh 0;
 }
 .maos img {
-    height: 19.25vw;
+    height: 40.4vh;
 
 }
 

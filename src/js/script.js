@@ -331,6 +331,52 @@ skinc2.addEventListener("click", function (){
     console.log(skin)
 })
 
+let cima = document.getElementById("cima")
+let baixo = document.getElementById("baixo")
+
+let vestiario = document.getElementById("vestiario")
+vestiarioaberto = false
+vestiario.addEventListener("click", function () {
+    if (vestiarioaberto == false){
+        ablebutton(skinh1)
+        ablebutton(skinh2)
+        ablebutton(skinb1)
+        ablebutton(skinb2)
+        ablebutton(skinc1)
+        ablebutton(skinc2)
+        cima.hidden = false
+        baixo.hidden = false
+        skinh1.hidden = false
+        skinh2.hidden = false
+        skinb1.hidden = false
+        skinb2.hidden = false
+        skinc1.hidden = false
+        skinc2.hidden = false
+    }
+    if (vestiarioaberto == true) {
+        disablebutton(skinh1)
+        disablebutton(skinh2)
+        disablebutton(skinb1)
+        disablebutton(skinb2)
+        disablebutton(skinc1)
+        disablebutton(skinc2)
+        cima.hidden = true
+        baixo.hidden = true
+        skinh1.hidden = true
+        skinh2.hidden = true
+        skinb1.hidden = true
+        skinb2.hidden = true
+        skinc1.hidden = true
+        skinc2.hidden = true
+    }
+    if (vestiarioaberto == false) {
+        vestiarioaberto = true
+    }
+    else if (vestiarioaberto == true) {
+        vestiarioaberto = false
+    }
+})
+
 // Define o turno aleatoriamente entre 1 ou 2
 let turno = Math.floor(Math.random() * 2) + 1;
 console.log("Turno inicial: " + turno);
