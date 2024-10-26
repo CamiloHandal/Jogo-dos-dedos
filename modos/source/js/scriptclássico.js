@@ -48,7 +48,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
-
+//------------------------------------------------------------------------------------------------------
+//Background
+let main = document.getElementById("Game")
+let botaobackground = document.getElementById("backgroundbutton")
+let cor = document.getElementById("cor")
+backgroundaberto = false
+botaobackground.addEventListener("click", function () {
+    if (backgroundaberto == false) {
+        cor.disabled = false
+        cor.hidden = false
+        backgroundaberto = true
+    }
+    else if (backgroundaberto == true){
+        cor.disabled = true
+        cor.hidden = true
+        backgroundaberto = false
+    }
+})
+cor.addEventListener("input", function () {
+    main.style.backgroundColor = cor.value
+    botaomao1.style.backgroundColor = cor.value
+    botaomao2.style.backgroundColor = cor.value
+    botaomao3.style.backgroundColor = cor.value
+    botaomao4.style.backgroundColor = cor.value
+    vestiario.style.backgroundColor = cor.value
+})
 //------------------------------------------------------------------------------------------------------
  //função para descer pro jogo
  function scrollToGame() {
