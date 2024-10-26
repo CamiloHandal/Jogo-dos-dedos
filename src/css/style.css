@@ -107,6 +107,15 @@ main {
     }
 
 
+.mensagem{
+    background-color: rgb(108, 201, 255);
+    padding: 30px;
+    margin: 5%;
+    border:2px #000000 solid;
+    border-radius: 47%; 
+
+}
+
 /* REGRAS */
 footer {
     height: 100vh;
