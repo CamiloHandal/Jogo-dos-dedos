@@ -141,15 +141,15 @@ footer h1:hover {
 }
 
 #line-1_3-cards {
-    top: 215vh;
+    top: 220vh;
 }
 #line-2_2-cards {
-    top: 232vh;
+    top: 248vh;
 }
 
 footer ul {
     list-style: none;
-    width: 100%;
+    width: 90vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -164,11 +164,11 @@ footer ul li{
     border-radius: 30px;
     border: 2px solid white;
     margin: 2%;
-    width: 30%;
-    height: 230px;
+    width: 30vw;
+    height: 20vh;
     align-items: center;
     justify-content: center;
-    font-size: min(2vw, 2.4vh);
+    font-size: min(2vw, 2vh);
     box-shadow: 0px 0px 5px white;
     transition: box-shadow 1s, scale 0.5s, transform 1s;
 }
