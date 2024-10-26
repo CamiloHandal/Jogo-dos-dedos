@@ -19,18 +19,19 @@ header {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: rgb(181, 210, 236);
+    background-color: rgb(244, 228, 164);
     align-items: center;
 }
 header h1 {
+    color: aliceblue;
     font-size: clamp(10vw, 10vw, 1000%);
-    text-shadow: 2px 2px 0px white;
+    text-shadow: 4px 4px 2px black;
     margin: 7% 0% 8% 0%;
 }
 header h2 {
-    color: white;
+    color: black;
     font-size: clamp(4vw, 4vw, 1000%);
-    text-shadow: 2px 2px 0px rgb(0, 0, 0);
+    text-shadow: 2px 2px 0px white;
     margin: -5% 0% 5% 0%;
 }
 
@@ -49,14 +50,14 @@ header button {
     margin: 0.5%;
 }
 header > button:first-of-type {
-    background-color: coral;
-    border: 2px solid yellow;
+    background-color: rgb(0, 255, 251);
+    border: 2px solid rgb(181, 210, 236);
     color: rgb(255, 255, 255);
 }
 header > button:last-child {
-    background-color: black;
-    border: 2px solid orange;
-    color: white;
+    background-color: white;
+    border: 2px solid rgb(18, 216, 197);
+    color: black;
 }
 
 /* JOGO */
@@ -106,9 +107,41 @@ main {
         transform: scaleY(-1);
     }
 
+#vestiario {
+    border: none;
+    position: absolute;
+    right: 1vw;
+}
+#vestiario img {
+    transform: scaleX(-1);
+    width: 3vw;
+}
+
+.divskins {
+    display: grid;
+    grid-template-columns: repeat(3, 7vw);
+    gap: 1px;
+    position: absolute;
+    z-index: 100;
+}
+@media (max-width: 840px) {
+    .divskins {
+        grid-template-columns: 1fr;
+    }
+}
+
+#cima {
+    top: 105vh;
+    right: 4vw;
+}
+#baixo {
+    top: 180vh;
+    right: 4vw;
+}
+
 
 .mensagem{
-    background-color: rgb(108, 201, 255);
+    background-color: rgb(234, 255, 184);
     padding: 30px;
     margin: 5%;
     border:2px #000000 solid;
@@ -122,9 +155,9 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
-    background-color: rgb(15, 15, 15);
-    border: 1px dotted red;
+    color: black;
+    background-color: rgb(240, 240, 240);
+    border: 1px dotted blue;
     overflow: hidden;
 }
 
@@ -133,12 +166,12 @@ footer h1 {
     top: 206vh;
     z-index: 100;
     padding: 1%;
-    background-color: black;
+    background-color: white;
     padding: 1% 2.5%;
     text-align: center;
     border-radius: 60px;
-    border: 3px solid orange;
-    box-shadow: 0px 0px 10px orange;
+    border: 3px solid rgb(18, 216, 197);
+    box-shadow: 0px 0px 10px rgb(18, 216, 197);
     transition: box-shadow 1s;
     font-size: 500%;
 }
@@ -170,16 +203,16 @@ footer ul {
 footer ul li{
     display: flex;
     padding: 25px;
-    background-color: black;
+    background-color: white;
     border-radius: 30px;
-    border: 2px solid white;
+    border: 2px solid black;
     margin: 2%;
     width: 30vw;
     height: 20vh;
     align-items: center;
     justify-content: center;
     font-size: min(2vw, 2vh);
-    box-shadow: 0px 0px 5px white;
+    box-shadow: 0px 0px 5px black;
     transition: box-shadow 1s, scale 0.5s, transform 1s;
 }
 footer ul li:hover {
@@ -191,11 +224,6 @@ footer ul li:hover {
 footer div{
     margin: 6.5% 0% -5% 0%;
     width: 90%;
-}
-
-.divskins {
-    display: grid;
-    margin: 1%;
 }
 
 
@@ -226,11 +254,24 @@ main button {
 }
 
 .botaoskin{
-    width: 8vw;
-    height: 8vw;
+    width: 6vw;
+    height: 6vw;
 }
 
 .imgbutao{
-    width: 6vw;
-    height: 5vw;    
+    width: 5vw;
+    height: 5vw;
+}
+
+#cor {
+    visibility: hidden;
+    position: fixed;
+    bottom: 5vh;
+    left: 1.5vw;
+}
+
+#color-picker img {
+    width: 1.6vw;
+    border: 1px dashed black;
+    border-radius: 100%;
 }
