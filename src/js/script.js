@@ -104,6 +104,8 @@ disablebutton(botaomao4)
 
 
 let avisojogada = document.getElementById("avisojogada")
+let divjogada = document.getElementById("divjogada")
+let divjogada2 = document.getElementById("divjogada2")
 let avisojogada2 = document.getElementById("avisojogada2")
 
 
@@ -406,6 +408,7 @@ vestiario.addEventListener("click", function () {
 let turno = Math.floor(Math.random() * 2) + 1;
 console.log("Turno inicial: " + turno);
 let avisoturno = document.getElementById("avisoturno")
+let divturno = document.getElementById("divturno")
 // Função para configurar os eventos e habilitações baseadas no turno
 function configurarTurno(turnoAtual) {
 //função para desabilitar os botões
@@ -431,6 +434,7 @@ disablebutton(botaomao1);
 disablebutton(botaomao2);
 disablebutton(botaomao3);
 disablebutton(botaomao4);
+divjogada2.hidden = true
 avisojogada2.textContent = ""
 botaomao1.removeEventListener("click", mao1selecionar)
 botaomao2.removeEventListener("click", mao2selecionar)
@@ -476,6 +480,7 @@ disablebutton(botaomao1);
 disablebutton(botaomao2);
 disablebutton(botaomao3);
 disablebutton(botaomao4);
+divjogada.hidden = true
 avisojogada.textContent = ""
 botaomao1.removeEventListener("click", mao1selecionar)
 botaomao2.removeEventListener("click", mao2selecionar)
@@ -618,6 +623,7 @@ function desabilitarTransferencia() {
 
 function tranferir1pra2() {
     if (proxydedos.dedos1 >= 1) {
+        divjogada.hidden = false
         avisojogada.textContent = "Selecione a quantidade de dedos:"
         botaotransferir1.hidden = false;
         ablebutton(botaotransferir1);
@@ -684,6 +690,7 @@ function tranferir1pra2() {
 
 function transferir2pra1() {
     if (proxydedos.dedos2 >= 1) {
+        divjogada.hidden = false
         avisojogada.textContent = "Selecione a quantidade de dedos:"
         botaotransferir1.hidden = false;
         ablebutton(botaotransferir1);
@@ -750,6 +757,7 @@ function transferir2pra1() {
 
 function transferir3pra4() {
     if (proxydedos.dedos3 >= 1) {
+        divjogada2.hidden = false
         avisojogada2.textContent = "Selecione a quantidade de dedos:"
         botaotransferir21.hidden = false;
         ablebutton(botaotransferir21);
@@ -816,6 +824,7 @@ function transferir3pra4() {
 
 function transferir4pra3() {
     if (proxydedos.dedos4 >= 1) {
+        divjogada2.hidden = false
         avisojogada2.textContent = "Selecione a quantidade de dedos:"
         botaotransferir21.hidden = false;
         ablebutton(botaotransferir21);
@@ -885,6 +894,7 @@ function transferir4pra3() {
 function preeação1() {
     botaomao1.removeEventListener("click", preeação1)
     botaomao2.removeEventListener("click", preeação2)
+    divjogada.hidden = false
     avisojogada.textContent = "Selecione seu alvo!"
     botaomao1.style.border = "solid red"
         if(proxydedos.dedos3 > 0){
@@ -906,6 +916,7 @@ botaomao3.removeEventListener("click", ação1pra3)
         botaomao4.removeEventListener("click", ação1pra4)
         botaomao1.removeEventListener("click", mao1selecionar)
         botaomao1.style.border = "none"
+        divjogada.hidden = true
         avisojogada.textContent = ""
         botaomao1.addEventListener("click",preeação1)
         botaomao2.addEventListener("click", preeação2)
@@ -922,6 +933,7 @@ botaomao3.removeEventListener("click", ação1pra3)
 function preeação2() {
 botaomao1.removeEventListener("click", preeação1)    
 botaomao2.removeEventListener("click", preeação2)
+divjogada.hidden = false
 avisojogada.textContent = "Selecione seu alvo!"
 botaomao2.style.border = "solid red"
 if(proxydedos.dedos3 > 0){
@@ -942,6 +954,7 @@ botaomao3.removeEventListener("click", ação2pra3)
         botaomao4.removeEventListener("click", ação2pra4)
         botaomao2.removeEventListener("click", mao2selecionar)
         botaomao2.style.border = "none"
+        divjogada.hidden = true
         avisojogada.textContent = ""
         botaomao1.addEventListener("click", preeação1)
         botaomao2.addEventListener("click",preeação2)
@@ -961,6 +974,7 @@ function preeação3() {
 botaomao3.removeEventListener("click", preeação3)
 botaomao4.removeEventListener("click", preeação4)
 botaomao3.style.border = "solid red"
+divjogada2.hidden = false
 avisojogada2.textContent = "Selecione seu alvo!"
 if(proxydedos.dedos1 > 0){
     ablebutton(botaomao1);
@@ -979,6 +993,7 @@ botaomao1.removeEventListener("click", ação3pra1)
         botaomao2.removeEventListener("click", ação3pra2)
         botaomao3.removeEventListener("click", mao3selecionar)
         botaomao3.style.border = "none"
+        divjogada2.hidden = true
         avisojogada2.textContent = ""
         botaomao3.addEventListener("click",preeação3)
         botaomao4.addEventListener("click", preeação4)
@@ -997,6 +1012,7 @@ function preeação4() {
 botaomao3.removeEventListener("click", preeação3)
 botaomao4.removeEventListener("click",preeação4)
 botaomao4.style.border = "solid red"
+divjogada2.hidden = false
 avisojogada2.textContent = "Selecione seu alvo!"
 if(proxydedos.dedos1 > 0){
     ablebutton(botaomao1);
@@ -1015,6 +1031,7 @@ botaomao1.removeEventListener("click", ação4pra1)
         botaomao2.removeEventListener("click", ação4pra2)
         botaomao4.removeEventListener("click", mao4selecionar)
         botaomao4.style.border = "none"
+        divjogada2.hidden = true
         avisojogada2.textContent = ""
         botaomao3.addEventListener("click", preeação3)
         botaomao4.addEventListener("click",preeação4)
