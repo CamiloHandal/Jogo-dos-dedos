@@ -67,26 +67,25 @@ main {
     justify-content: center;
     align-items: center;
 }
-main > div{
-    margin-left: 0%;
-}
-main > p {
-    margin-left: 0%;
+
+
+
+.columns-hands {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    height: 90vh;
 }
 
 .maos {
-    width: 18vw;
-    height: 20.70vw;
-    display: block;
-    float: right;
-    margin: 10%;
-    margin-left: 30%;
     border: none;
+    margin: 8vh 0;
 }
 .maos img {
-    width: 16vw;
     height: 19.25vw;
-    object-fit: cover;
+
 }
 
     #mao1 {
@@ -105,6 +104,8 @@ main > p {
         transform: rotate(180deg);
         transform: scaleY(-1);
     }
+
+
 /* REGRAS */
 footer {
     height: 100vh;
@@ -118,7 +119,9 @@ footer {
 }
 
 footer h1 {
-    margin-top: 2.5%;
+    position: absolute;
+    top: 206vh;
+    z-index: 100;
     padding: 1%;
     background-color: black;
     padding: 1% 2.5%;
@@ -131,6 +134,17 @@ footer h1 {
 }
 footer h1:hover {
     box-shadow: 0px 0px 20px orange;
+}
+
+.lines-cards {
+    position: absolute;
+}
+
+#line-1_3-cards {
+    top: 215vh;
+}
+#line-2_2-cards {
+    top: 232vh;
 }
 
 footer ul {
@@ -154,14 +168,14 @@ footer ul li{
     height: 230px;
     align-items: center;
     justify-content: center;
-    font-size: clamp(1vw, 1.4vw, 1.5vw);
+    font-size: min(2vw, 2.4vh);
     box-shadow: 0px 0px 5px white;
     transition: box-shadow 1s, scale 0.5s, transform 1s;
 }
-
 footer ul li:hover {
     box-shadow: 0 0 25px white;
     scale: 1.5;
+    z-index: 10;
 }
 
 footer div{
