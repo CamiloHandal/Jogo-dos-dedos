@@ -172,10 +172,10 @@ mudarImagem(imagem1, skin1[4]);
 }
 if(proxydedos.dedos1 >= 5) {
 disablebutton(botaomao1)
-botaomao1.removeEventListener("click", preeação1)
+botaomao1.removeEventListener("click", preação1)
 if (proxydedos.dedos1 >= 5){
     disablebutton(botaomao1)
-    botaomao1.removeEventListener("click", preeação1)
+    botaomao1.removeEventListener("click", preação1)
 }
 mudarImagem(imagem1, skin1[5]);
 setTimeout(() => {
@@ -187,7 +187,7 @@ if(proxydedos.dedos1 == 0) {
 mudarImagem(imagem1, skin1[0]);
 if (proxydedos.dedos1 == 0){
     disablebutton(botaomao1)
-    botaomao1.removeEventListener("click", preeação1)
+    botaomao1.removeEventListener("click", preação1)
 }
 }
 
@@ -206,10 +206,10 @@ mudarImagem(imagem2, skin1[4]);
 }
 if(proxydedos.dedos2 >= 5) {
 disablebutton(botaomao2)
-botaomao2.removeEventListener("click", preeação2)
+botaomao2.removeEventListener("click", preação2)
 if (proxydedos.dedos2 >= 5){
     disablebutton(botaomao2)
-    botaomao2.removeEventListener("click", preeação2)
+    botaomao2.removeEventListener("click", preação2)
 }
 mudarImagem(imagem2, skin1[5]);
 setTimeout(() => {
@@ -220,7 +220,7 @@ if(proxydedos.dedos2 == 0) {
 mudarImagem(imagem2, skin1[0]);
 if (proxydedos.dedos2 == 0){
     disablebutton(botaomao2)
-    botaomao2.removeEventListener("click", preeação2)
+    botaomao2.removeEventListener("click", preação2)
 }
 }
 
@@ -238,10 +238,10 @@ mudarImagem(imagem3, skin2[4]);
 }
 if(proxydedos.dedos3 >= 5) {
 disablebutton(botaomao3)
-botaomao3.removeEventListener("click", preeação3)
+botaomao3.removeEventListener("click", preação3)
 if (proxydedos.dedos3 >= 5){
     disablebutton(botaomao3)
-    botaomao3.removeEventListener("click", preeação3)
+    botaomao3.removeEventListener("click", preação3)
 }
 mudarImagem(imagem3, skin2[5])
 setTimeout(() => {
@@ -253,7 +253,7 @@ if(proxydedos.dedos3 == 0) {
 mudarImagem(imagem3, skin2[0]);
 if (proxydedos.dedos3 == 0){
     disablebutton(botaomao3)
-    botaomao3.removeEventListener("click", preeação3)
+    botaomao3.removeEventListener("click", preação3)
 }
 }
 
@@ -271,10 +271,10 @@ mudarImagem(imagem4, skin2[4]);
 }
 if(proxydedos.dedos4 >= 5) {
 disablebutton(botaomao4)
-botaomao4.removeEventListener("click", preeação4)
+botaomao4.removeEventListener("click", preação4)
 if (proxydedos.dedos4 >= 5){
     disablebutton(botaomao4)
-    botaomao4.removeEventListener("click", preeação4)
+    botaomao4.removeEventListener("click", preação4)
 }
 mudarImagem(imagem4, skin2[5])
 setTimeout(() => {
@@ -285,7 +285,7 @@ if(proxydedos.dedos4 == 0) {
 mudarImagem(imagem4, skin2[0]);
 if (proxydedos.dedos4 == 0){
     disablebutton(botaomao4)
-    botaomao4.removeEventListener("click", preeação4)
+    botaomao4.removeEventListener("click", preação4)
 }
 }
 }
@@ -442,31 +442,31 @@ botaomao3.removeEventListener("click", mao3selecionar)
 botaomao4.removeEventListener("click", mao4selecionar)
 botaomao3.style.border = "none"
 botaomao4.style.border = "none"
-botaomao1.removeEventListener("click", preeação1);
-botaomao2.removeEventListener("click", preeação2);
-botaomao3.removeEventListener("click", preeação3);
-botaomao4.removeEventListener("click", preeação4);
+botaomao1.removeEventListener("click", preação1);
+botaomao2.removeEventListener("click", preação2);
+botaomao3.removeEventListener("click", preação3);
+botaomao4.removeEventListener("click", preação4);
 // Habilitar botões do player 1 no turno 1
 if (proxydedos.dedos1 > 0){
     ablebutton(botaomao1);
-    botaomao1.addEventListener("click", preeação1);
+    botaomao1.addEventListener("click", preação1);
 } else {
     disablebutton(botaomao1);
 }
 if (proxydedos.dedos1 == 0){
     disablebutton(botaomao1)
-    botaomao1.removeEventListener("click", preeação1)
+    botaomao1.removeEventListener("click", preação1)
 }
 
 if (proxydedos.dedos2 > 0){
     ablebutton(botaomao2);
-    botaomao2.addEventListener("click", preeação2);
+    botaomao2.addEventListener("click", preação2);
 } else {
     disablebutton(botaomao2);
 }
 if (proxydedos.dedos2 == 0){
     disablebutton(botaomao2)
-    botaomao2.removeEventListener("click", preeação2)
+    botaomao2.removeEventListener("click", preação2)
 }
 avisoturno.textContent = "É a vez do de baixo!";
 
@@ -488,20 +488,20 @@ botaomao3.removeEventListener("click", mao3selecionar)
 botaomao4.removeEventListener("click", mao4selecionar)
 botaomao1.style.border = "none"
 botaomao2.style.border = "none"
-botaomao1.removeEventListener("click", preeação1);
-botaomao2.removeEventListener("click", preeação2);
-botaomao3.removeEventListener("click", preeação3);
-botaomao4.removeEventListener("click", preeação4);
+botaomao1.removeEventListener("click", preação1);
+botaomao2.removeEventListener("click", preação2);
+botaomao3.removeEventListener("click", preação3);
+botaomao4.removeEventListener("click", preação4);
 // Habilitar botões do player 2 no turno 2
 if (proxydedos.dedos3 > 0){
     ablebutton(botaomao3);
-    botaomao3.addEventListener("click", preeação3);
+    botaomao3.addEventListener("click", preação3);
 } else {
     disablebutton(botaomao3);
 }
 if (proxydedos.dedos4 > 0 ){
     ablebutton(botaomao4);
-    botaomao4.addEventListener("click", preeação4);
+    botaomao4.addEventListener("click", preação4);
 } else {
     disablebutton(botaomao4);
 }
@@ -549,15 +549,15 @@ function transferirEntreMaos(maoOrigem, maoDestino, numDedos) {
 // Função para desabilitar os botões de transferência após a jogada
 function desabilitarTransferencia() {
     // Remove listeners das ações de mão
-    botaomao1.removeEventListener("click", preeação1);
-    botaomao2.removeEventListener("click", preeação2);
+    botaomao1.removeEventListener("click", preação1);
+    botaomao2.removeEventListener("click", preação2);
     botaomao3.removeEventListener("click", ação1pra3);
     botaomao4.removeEventListener("click", ação1pra4);
     botaomao3.removeEventListener("click", ação2pra3);
     botaomao4.removeEventListener("click", ação2pra4);
 
-    botaomao3.removeEventListener("click", preeação3);
-    botaomao4.removeEventListener("click", preeação4);
+    botaomao3.removeEventListener("click", preação3);
+    botaomao4.removeEventListener("click", preação4);
     botaomao1.removeEventListener("click", ação3pra1);
     botaomao2.removeEventListener("click", ação3pra2);
     botaomao1.removeEventListener("click", ação4pra1);
@@ -891,9 +891,9 @@ function transferir4pra3() {
 }
 
 
-function preeação1() {
-    botaomao1.removeEventListener("click", preeação1)
-    botaomao2.removeEventListener("click", preeação2)
+function preação1() {
+    botaomao1.removeEventListener("click", preação1)
+    botaomao2.removeEventListener("click", preação2)
     divjogada.hidden = false
     avisojogada.textContent = "Selecione seu alvo!"
     botaomao1.style.border = "solid red"
@@ -918,8 +918,8 @@ botaomao3.removeEventListener("click", ação1pra3)
         botaomao1.style.border = "none"
         divjogada.hidden = true
         avisojogada.textContent = ""
-        botaomao1.addEventListener("click",preeação1)
-        botaomao2.addEventListener("click", preeação2)
+        botaomao1.addEventListener("click",preação1)
+        botaomao2.addEventListener("click", preação2)
         botaotransferir1.hidden = true
         botaotransferir2.hidden = true
         botaotransferir3.hidden = true
@@ -930,9 +930,9 @@ botaomao3.removeEventListener("click", ação1pra3)
         botaomao2.removeEventListener("click", tranferir1pra2)
 }
 
-function preeação2() {
-botaomao1.removeEventListener("click", preeação1)    
-botaomao2.removeEventListener("click", preeação2)
+function preação2() {
+botaomao1.removeEventListener("click", preação1)    
+botaomao2.removeEventListener("click", preação2)
 divjogada.hidden = false
 avisojogada.textContent = "Selecione seu alvo!"
 botaomao2.style.border = "solid red"
@@ -956,8 +956,8 @@ botaomao3.removeEventListener("click", ação2pra3)
         botaomao2.style.border = "none"
         divjogada.hidden = true
         avisojogada.textContent = ""
-        botaomao1.addEventListener("click", preeação1)
-        botaomao2.addEventListener("click",preeação2)
+        botaomao1.addEventListener("click", preação1)
+        botaomao2.addEventListener("click",preação2)
 
         botaotransferir1.hidden = true
         botaotransferir2.hidden = true
@@ -970,9 +970,9 @@ botaomao3.removeEventListener("click", ação2pra3)
 }
 
 
-function preeação3() {
-botaomao3.removeEventListener("click", preeação3)
-botaomao4.removeEventListener("click", preeação4)
+function preação3() {
+botaomao3.removeEventListener("click", preação3)
+botaomao4.removeEventListener("click", preação4)
 botaomao3.style.border = "solid red"
 divjogada2.hidden = false
 avisojogada2.textContent = "Selecione seu alvo!"
@@ -995,8 +995,8 @@ botaomao1.removeEventListener("click", ação3pra1)
         botaomao3.style.border = "none"
         divjogada2.hidden = true
         avisojogada2.textContent = ""
-        botaomao3.addEventListener("click",preeação3)
-        botaomao4.addEventListener("click", preeação4)
+        botaomao3.addEventListener("click",preação3)
+        botaomao4.addEventListener("click", preação4)
 
         botaotransferir21.hidden = true
         botaotransferir22.hidden = true
@@ -1008,9 +1008,9 @@ botaomao1.removeEventListener("click", ação3pra1)
         botaomao4.removeEventListener("click", transferir3pra4)
 }
 
-function preeação4() {
-botaomao3.removeEventListener("click", preeação3)
-botaomao4.removeEventListener("click",preeação4)
+function preação4() {
+botaomao3.removeEventListener("click", preação3)
+botaomao4.removeEventListener("click",preação4)
 botaomao4.style.border = "solid red"
 divjogada2.hidden = false
 avisojogada2.textContent = "Selecione seu alvo!"
@@ -1033,8 +1033,8 @@ botaomao1.removeEventListener("click", ação4pra1)
         botaomao4.style.border = "none"
         divjogada2.hidden = true
         avisojogada2.textContent = ""
-        botaomao3.addEventListener("click", preeação3)
-        botaomao4.addEventListener("click",preeação4)
+        botaomao3.addEventListener("click", preação3)
+        botaomao4.addEventListener("click",preação4)
 
         botaotransferir21.hidden = true
         botaotransferir22.hidden = true
