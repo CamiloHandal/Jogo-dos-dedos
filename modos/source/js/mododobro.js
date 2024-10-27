@@ -116,10 +116,10 @@ let vidas4 = 1
 
 //Declaração de valores e imagens para os dedos
 let dedos = {
-    dedos1:1,
-    dedos2:1,
-    dedos3:1,
-    dedos4:1,
+    dedos1:2,
+    dedos2:2,
+    dedos3:2,
+    dedos4:2,
 }
 let proxydedos = new Proxy(dedos, {
     set(target, name, value){

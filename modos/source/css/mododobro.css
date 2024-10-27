@@ -19,18 +19,18 @@ header {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: rgb(181, 210, 236);
+    background-color: #0000ff;
     align-items: center;
 }
 header h1 {
     font-size: clamp(10vw, 10vw, 1000%);
-    text-shadow: 2px 2px 0px white;
+    text-shadow: 4px 4px 0px #ffffff;
     margin: 7% 0% 8% 0%;
 }
 header h2 {
     color: white;
     font-size: clamp(4vw, 4vw, 1000%);
-    text-shadow: 2px 2px 0px rgb(0, 0, 0);
+    text-shadow: 4px 4px 0px rgb(00, 00, 00);
     margin: -5% 0% 5% 0%;
 }
 
@@ -49,13 +49,13 @@ header button {
     margin: 0.5%;
 }
 header > button:first-of-type {
-    background-color: coral;
-    border: 2px solid yellow;
+    background-color: rgb(255, 127, 80);
+    border: 4px solid rgb(255, 255, 0);
     color: rgb(255, 255, 255);
 }
 header > button:last-child {
     background-color: black;
-    border: 2px solid orange;
+    border: 4px solid orange;
     color: white;
 }
 
@@ -113,7 +113,7 @@ main {
 }
 #vestiario img {
     transform: scaleX(-1);
-    width: 3vw;
+    width: 6vw;
 }
 
 .divskins {
@@ -140,11 +140,11 @@ main {
 
 
 .mensagem{
-    background-color: rgb(108, 201, 255);
-    padding: 30px;
-    margin: 5%;
-    border:2px #000000 solid;
-    border-radius: 47%; 
+    background-color: rgb(0, 162, 255);
+    padding: 60px;
+    margin: 10%;
+    border:8px #000000 solid;
+    border-radius: 94%; 
 
 }
 
@@ -155,8 +155,8 @@ footer {
     flex-direction: column;
     align-items: center;
     color: white;
-    background-color: rgb(15, 15, 15);
-    border: 1px dotted red;
+    background-color: rgb(0, 0, 0);
+    border: 2px dotted red;
     overflow: hidden;
 }
 
@@ -165,12 +165,12 @@ footer h1 {
     top: 206vh;
     z-index: 100;
     padding: 1%;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     padding: 1% 2.5%;
     text-align: center;
     border-radius: 60px;
-    border: 3px solid orange;
-    box-shadow: 0px 0px 10px orange;
+    border: 6px solid orange;
+    box-shadow: 0px 0px 20px orange;
     transition: box-shadow 1s;
     font-size: 500%;
 }
@@ -203,20 +203,20 @@ footer ul li{
     display: flex;
     padding: 25px;
     background-color: black;
-    border-radius: 30px;
-    border: 2px solid white;
+    border-radius: 60px;
+    border: 4px solid white;
     margin: 2%;
     width: 30vw;
     height: 20vh;
     align-items: center;
     justify-content: center;
     font-size: min(2vw, 2vh);
-    box-shadow: 0px 0px 5px white;
-    transition: box-shadow 1s, scale 0.5s, transform 1s;
+    box-shadow: 0px 0px 10px white;
+    transition: box-shadow 2s, scale 1s, transform 2s;
 }
 footer ul li:hover {
-    box-shadow: 0 0 25px white;
-    scale: 1.5;
+    box-shadow: 0 0 50px white;
+    scale: 3;
     z-index: 10;
 }
 
@@ -244,11 +244,11 @@ main button {
     cursor: pointer;
 }
 #volume-change_btn {
-    border-radius: 20px;
+    border-radius: 40px;
     background-color: white;
 }
 #music-change_btn {
-    border-radius: 50px;
+    border-radius: 100px;
     background-color: white;
 }
 
@@ -270,7 +270,7 @@ main button {
 }
 
 #color-picker img {
-    width: 1.6vw;
+    width: 3.2vw;
     border: 1px dashed black;
     border-radius: 100%;
 }
