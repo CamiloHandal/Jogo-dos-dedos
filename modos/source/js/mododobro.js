@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const source = document.getElementById("sourceMusica");
     // Lista de músicas
     const musicas = [
-        "./src/aud/lobby-classic-game.mp3",
-        "./src/aud/answer_30sec.mp3",
-        "./src/aud/alt02-answer_030sec.mp3",
-        "./src/aud/alt03-answer_030sec.mp3",
-        "./src/aud/alt02-answer_060sec.mp3"
+        "/src/aud/lobby-classic-game.mp3",
+        "/src/aud/answer_30sec.mp3",
+        "/src/aud/alt02-answer_030sec.mp3",
+        "/src/aud/alt03-answer_030sec.mp3",
+        "/src/aud/alt02-answer_060sec.mp3"
     ];
 
     // Índice atual da música
@@ -108,6 +108,11 @@ let divjogada = document.getElementById("divjogada")
 let divjogada2 = document.getElementById("divjogada2")
 let avisojogada2 = document.getElementById("avisojogada2")
 
+let vidas1 = 1
+let vidas2 = 1
+let vidas3 = 1
+let vidas4 = 1
+
 
 //Declaração de valores e imagens para os dedos
 let dedos = {
@@ -125,11 +130,11 @@ let proxydedos = new Proxy(dedos, {
     }
 })
 
-let skinhiro = ["./src/img/dedo 0 hiro.png","./src/img/dedo 1 hiro.png","./src/img/dedo 2 hiro.png","./src/img/dedo 3 hiro.png","./src/img/dedo 4 hiro.png","./src/img/dedo 5 hiro.png"]
+let skinhiro = ["/src/img/dedo 0 hiro.png","/src/img/dedo 1 hiro.png","/src/img/dedo 2 hiro.png","/src/img/dedo 3 hiro.png","/src/img/dedo 4 hiro.png","/src/img/dedo 5 hiro.png"]
 
-let skincamilo = ["./src/img/dedo 0 camilo.png","./src/img/dedo 1 camilo.png","./src/img/dedo 2 camilo.png","./src/img/dedo 3 camilo.png","./src/img/dedo 4 camilo.png","./src/img/dedo 5 camilo.png"]
+let skincamilo = ["/src/img/dedo 0 camilo.png","/src/img/dedo 1 camilo.png","/src/img/dedo 2 camilo.png","/src/img/dedo 3 camilo.png","/src/img/dedo 4 camilo.png","/src/img/dedo 5 camilo.png"]
 
-let skinbilibio = ["./src/img/dedo 0 bilibio.png","./src/img/dedo 1 bilibio.png","./src/img/dedo 2 bilibio.png","./src/img/dedo 3 bilibio.png","./src/img/dedo 4 bilibio.png","./src/img/dedo 5 bilibio.png"]
+let skinbilibio = ["/src/img/dedo 0 bilibio.png","/src/img/dedo 1 bilibio.png","/src/img/dedo 2 bilibio.png","/src/img/dedo 3 bilibio.png","/src/img/dedo 4 bilibio.png","/src/img/dedo 5 bilibio.png"]
 
 let skins = [skinhiro, skinbilibio, skincamilo]
 
@@ -171,17 +176,24 @@ if(proxydedos.dedos1 == 4) {
 mudarImagem(imagem1, skin1[4]);
 }
 if(proxydedos.dedos1 >= 5) {
+    mudarImagem(imagem1, skin1[5])
+    if (vidas1 == 1){
+        dedos.dedos1 = 5
+        vidas1 = 0
+    }
+    else if(vidas1 == 0){
+        if (proxydedos.dedos1 > 5){
 disablebutton(botaomao1)
 botaomao1.removeEventListener("click", preação1)
 if (proxydedos.dedos1 >= 5){
     disablebutton(botaomao1)
     botaomao1.removeEventListener("click", preação1)
 }
-mudarImagem(imagem1, skin1[5]);
 setTimeout(() => {
 proxydedos.dedos1 = 0
 }, 750);
-
+}
+    }
 }
 if(proxydedos.dedos1 == 0) {
 mudarImagem(imagem1, skin1[0]);
@@ -205,17 +217,26 @@ if(proxydedos.dedos2 == 4) {
 mudarImagem(imagem2, skin1[4]);
 }
 if(proxydedos.dedos2 >= 5) {
+    mudarImagem(imagem2, skin1[5])
+    if (vidas2 == 1){
+        dedos.dedos2 = 5
+        vidas2 = 0
+    }
+    else if(vidas2 == 0){
+        if (proxydedos.dedos2 > 5){
 disablebutton(botaomao2)
 botaomao2.removeEventListener("click", preação2)
 if (proxydedos.dedos2 >= 5){
     disablebutton(botaomao2)
     botaomao2.removeEventListener("click", preação2)
 }
-mudarImagem(imagem2, skin1[5]);
 setTimeout(() => {
     proxydedos.dedos2 = 0
 }, 750);
+    }
 }
+}
+
 if(proxydedos.dedos2 == 0) {
 mudarImagem(imagem2, skin1[0]);
 if (proxydedos.dedos2 == 0){
@@ -237,17 +258,24 @@ if(proxydedos.dedos3 == 4) {
 mudarImagem(imagem3, skin2[4]);
 }
 if(proxydedos.dedos3 >= 5) {
+    mudarImagem(imagem3, skin2[5])
+    if (vidas3 == 1){
+        dedos.dedos3 = 5
+        vidas3 = 0
+    }
+    else if(vidas3 == 0){
+         if (proxydedos.dedos3 > 5){
 disablebutton(botaomao3)
 botaomao3.removeEventListener("click", preação3)
 if (proxydedos.dedos3 >= 5){
     disablebutton(botaomao3)
     botaomao3.removeEventListener("click", preação3)
 }
-mudarImagem(imagem3, skin2[5])
 setTimeout(() => {
 proxydedos.dedos3 = 0
 }, 750);
-
+    }
+}
 }
 if(proxydedos.dedos3 == 0) {
 mudarImagem(imagem3, skin2[0]);
@@ -270,16 +298,24 @@ if(proxydedos.dedos4 == 4) {
 mudarImagem(imagem4, skin2[4]);
 }
 if(proxydedos.dedos4 >= 5) {
+    mudarImagem(imagem4, skin2[5])
+    if (vidas4 == 1){
+        dedos.dedos4 = 5
+        vidas4 = 0
+    }
+    else if(vidas4 == 0){
+        if (proxydedos.dedos4 > 5){
 disablebutton(botaomao4)
 botaomao4.removeEventListener("click", preação4)
 if (proxydedos.dedos4 >= 5){
     disablebutton(botaomao4)
     botaomao4.removeEventListener("click", preação4)
 }
-mudarImagem(imagem4, skin2[5])
 setTimeout(() => {
 proxydedos.dedos4 = 0
 }, 750);
+}
+    }
 }
 if(proxydedos.dedos4 == 0) {
 mudarImagem(imagem4, skin2[0]);
@@ -534,7 +570,7 @@ function transferirEntreMaos(maoOrigem, maoDestino, numDedos) {
     let tempDestino = proxydedos[maoDestino];
     
     proxydedos[maoOrigem] -= numDedos;
-    proxydedos[maoDestino] += numDedos;
+    proxydedos[maoDestino] += numDedos*2;
 
     // Verificação de jogada inválida
     if (proxydedos[maoOrigem] === tempDestino && proxydedos[maoDestino] === tempOrigem) {
@@ -1049,14 +1085,14 @@ botaomao1.removeEventListener("click", ação4pra1)
 
 
 function ação1pra3() {
-proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3
+proxydedos.dedos3 = (proxydedos.dedos1*2) + proxydedos.dedos3
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação1pra3)
             botaomao4.removeEventListener("click", ação1pra4)
 }
 function ação1pra4() {
-proxydedos.dedos4 = proxydedos.dedos1 + proxydedos.dedos4
+proxydedos.dedos4 = (proxydedos.dedos1*2) + proxydedos.dedos4
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação1pra3)
@@ -1064,14 +1100,14 @@ proxydedos.dedos4 = proxydedos.dedos1 + proxydedos.dedos4
 }
 
 function ação2pra3() {
-proxydedos.dedos3 = proxydedos.dedos2 + proxydedos.dedos3
+proxydedos.dedos3 = (proxydedos.dedos2*2) + proxydedos.dedos3
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação2pra3)
             botaomao4.removeEventListener("click", ação2pra4)
 }
 function ação2pra4() {
-proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
+proxydedos.dedos4 = (proxydedos.dedos2*2) + proxydedos.dedos4
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação2pra3)
@@ -1079,14 +1115,14 @@ proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
 }
 
 function ação3pra1() {
-proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos3
+proxydedos.dedos1 = proxydedos.dedos1 + (proxydedos.dedos3*2)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação3pra1)
             botaomao2.removeEventListener("click", ação3pra2)
         }
 function ação3pra2() {
-proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
+proxydedos.dedos2 = proxydedos.dedos2 + (proxydedos.dedos3*2)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação3pra1)
@@ -1094,14 +1130,14 @@ proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
         }
 
 function ação4pra1() {
-proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos4
+proxydedos.dedos1 = proxydedos.dedos1 + (proxydedos.dedos4*2)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação4pra1)
             botaomao2.removeEventListener("click", ação4pra2)
 }
 function ação4pra2() {
-proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos4
+proxydedos.dedos2 = proxydedos.dedos2 + (proxydedos.dedos4*2)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação4pra1)
