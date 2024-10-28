@@ -121,7 +121,10 @@ let proxydedos = new Proxy(dedos, {
     console.log("Mudando", target);
     fimdejogo
     target[name] = value
-    verificarDedos()
+    setTimeout(() => {
+        verificarDedos()
+    }, 800)
+
     }
 })
 
@@ -1046,7 +1049,9 @@ botaomao1.removeEventListener("click", ação4pra1)
         botaomao3.removeEventListener("click", transferir4pra3)
 }
 
+// ===============================================================
 
+const imgAnimation = document.getElementById('img-animation');
 
 function ação1pra3() {
 proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3
@@ -1054,13 +1059,106 @@ proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação1pra3)
             botaomao4.removeEventListener("click", ação1pra4)
+
+            if (skin1 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao1');
+                imgAnimation.classList.add('move1To3');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move1To3');
+                        imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao1');
+                imgAnimation.classList.add('move1To3');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move1To3');
+                        imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao1');
+                imgAnimation.classList.add('move1To3');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move1To3');
+                        imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
 }
+
+
+
 function ação1pra4() {
 proxydedos.dedos4 = proxydedos.dedos1 + proxydedos.dedos4
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação1pra3)
             botaomao4.removeEventListener("click", ação1pra4)
+
+            if (skin1 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao1');
+                imgAnimation.classList.add('move1To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move1To4');
+                        imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao1');
+                imgAnimation.classList.add('move1To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move1To4');
+                        imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao1');
+                imgAnimation.classList.add('move1To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move1To4');
+                        imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
 }
 
 function ação2pra3() {
@@ -1069,6 +1167,51 @@ proxydedos.dedos3 = proxydedos.dedos2 + proxydedos.dedos3
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação2pra3)
             botaomao4.removeEventListener("click", ação2pra4)
+
+            if (skin1 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao2');
+                imgAnimation.classList.add('move1To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move2To3');
+                        imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao2');
+                imgAnimation.classList.add('move1To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move2To3');
+                        imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao2');
+                imgAnimation.classList.add('move1To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move2To3');
+                        imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
 }
 function ação2pra4() {
 proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
@@ -1076,6 +1219,51 @@ proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação2pra3)
             botaomao4.removeEventListener("click", ação2pra4)
+
+            if (skin1 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao2');
+                imgAnimation.classList.add('move2To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move2To4');
+                        imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao2');
+                imgAnimation.classList.add('move2To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move2To4');
+                        imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin1 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao2');
+                imgAnimation.classList.add('move2To4');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move2To4');
+                        imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
 }
 
 function ação3pra1() {
@@ -1084,6 +1272,51 @@ proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos3
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação3pra1)
             botaomao2.removeEventListener("click", ação3pra2)
+
+            if (skin2 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao3');
+                imgAnimation.classList.add('move3To1');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move3To1');
+                        imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao3');
+                imgAnimation.classList.add('move3To1');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move3To1');
+                        imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao3');
+                imgAnimation.classList.add('move3To1');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move3To1');
+                        imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
         }
 function ação3pra2() {
 proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
@@ -1091,6 +1324,51 @@ proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação3pra1)
             botaomao2.removeEventListener("click", ação3pra2)
+
+            if (skin2 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao3');
+                imgAnimation.classList.add('move3To2');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move3To2');
+                        imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao3');
+                imgAnimation.classList.add('move3To2');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move3To2');
+                        imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao3');
+                imgAnimation.classList.add('move3To2');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move3To2');
+                        imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
         }
 
 function ação4pra1() {
@@ -1099,6 +1377,51 @@ proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos4
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação4pra1)
             botaomao2.removeEventListener("click", ação4pra2)
+
+            if (skin2 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao4');
+                imgAnimation.classList.add('move4To1');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move4To1');
+                        imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao4');
+                imgAnimation.classList.add('move4To1');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move4To1');
+                        imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao4');
+                imgAnimation.classList.add('move4To1');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move4To1');
+                        imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
 }
 function ação4pra2() {
 proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos4
@@ -1106,6 +1429,51 @@ proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos4
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação4pra1)
             botaomao2.removeEventListener("click", ação4pra2)
+
+            if (skin2 == skinhiro) {
+                imgAnimation.src = 'https://static.vecteezy.com/system/resources/previews/010/462/548/original/bomb-explosion-pixel-free-vector.jpg';
+                imgAnimation.classList.add('position-img-animation-mao4');
+                imgAnimation.classList.add('move4To2');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://media.tenor.com/DqOx5At4J4cAAAAj/explosion.gif'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move4To2');
+                        imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skincamilo) {
+                imgAnimation.src = 'https://w7.pngwing.com/pngs/47/38/png-transparent-ice-cream-cones-sundae-chocolate-ice-cream-chiquinho-sorvetes-ice-cream-food-frozen-dessert-gelato.png';
+                imgAnimation.classList.add('position-img-animation-mao4');
+                imgAnimation.classList.add('move4To2');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move4To2');
+                        imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
+
+            if (skin2 == skinbilibio) {
+                imgAnimation.src = 'https://wallpaperaccess.com/full/1802777.jpg';
+                imgAnimation.classList.add('position-img-animation-mao4');
+                imgAnimation.classList.add('move4To2');
+                imgAnimation.hidden = false;
+                setTimeout(() => {
+                    // Repinga a bola randomicamente (esquerda ou direita)
+                    setTimeout(() => {
+                        imgAnimation.classList.remove('move4To2');
+                        imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.hidden = true;
+                    }, 500);
+                }, 800);
+            }
 }
 
 
