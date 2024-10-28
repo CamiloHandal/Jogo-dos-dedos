@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        #one {
+            display: flex;
+            width: 100vw;
+            background-color: black;
+        }
+
+        .moveRight {
+            animation: moveRight 1.5s ease-in-out forwards;
+        }
+        .moveLeft {
+            animation: moveLeft 1.5s ease-in-out forwards;
+        }
+
+        @keyframes moveRight {
+            0% {
+                transform: translateX(0) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(50vw) rotateZ(720deg);
+            }
+        }
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(50vw) rotateZ(720deg);
+            }
+            100% {
+                transform: translateX(0) rotateZ(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="Animation">Animation</button>
+    <div id="one">
+        <img src="https://wallpaperaccess.com/full/1802777.jpg" alt="" id="img-color">
+    </div>
+
+    <script>
+        const animationImg_color = document.getElementById('img-color');
+        const btnAnimation = document.getElementById('Animation');
+
+        btnAnimation.addEventListener('click', function() {
+            animationImg_color.classList.remove('moveLeft');
+            animationImg_color.classList.add('moveRight');
+
+            animationImg_color.addEventListener('animationend', function() {
+                setTimeout(() => {
+                    animationImg_color.classList.remove('moveRight');
+                    animationImg_color.classList.add('moveLeft');
+                }, 200);
+            }, {once: true });
+        });
+
+    </script>
+</body>
+</html>
