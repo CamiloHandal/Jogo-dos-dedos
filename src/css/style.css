@@ -33,6 +33,27 @@ header h2 {
     text-shadow: 2px 2px 0px rgb(0, 0, 0);
     margin: -5% 0% 5% 0%;
 }
+header h3 {
+    color: white;
+    font-size: 3vw;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0);
+    margin: 0vh 0vw 0vh 10vw;
+}
+
+.outrosmodos{
+    width: 30vw;
+    position: absolute;
+    bottom: 1vh;
+    right: 1.5vw;
+}
+
+#modos {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 0.5vw;
+    margin: 0vh 0vw 0vh 9vw;
+}
 
 a {
     text-decoration: none;
@@ -58,25 +79,14 @@ header > button:last-child {
     border: 2px solid orange;
     color: white;
 }
-
-.outrosmodos{
-    width: 10%px;
-    position: absolute;
-    margin-left: 65vw;
-    margin-top:73vh ;
-   
     
-
-}
 #dobro{
     width: 10vh;
-    margin-right: 00vh;
 
 }
 
 #classic{
     width: 10vh;
-    margin-left: 33vh;
 }
 
 

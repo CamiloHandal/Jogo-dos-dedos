@@ -42,10 +42,11 @@
         <button onclick="scrollToGame()" id="btn-game">Play</button>
         <button onclick="scrollToRules()" id="btn-rules">Rules</button>
         <div class="outrosmodos">
-            <h2>Outros modos:</h2>
-            <a href="./modos/modoclássico.html"><img id="classic" src="./src/img/dedo 1 camilo.png" alt="" title="Modo clássico"></a>
-            <a href="./modos/mododobro.html"><img id="dobro" src="./src/img/dedo 4 bilibio.png" alt="" title="Modo dobro"></a>
-
+            <h3> Outros Modos:</h3>
+            <div id="modos">
+                <a href="./modos/modoclássico.html"><img id="classic" src="./src/img/dedo 1 camilo.png" alt="" title="Modo clássico"></a>
+                <a href="./modos/mododobro.html"><img id="dobro" src="./src/img/dedo 4 bilibio.png" alt="" title="Modo dobro"></a>
+            </div>
         </div>
     </header>
     <!--================================================================ XXXXXXXXX ================================================================-->
@@ -64,8 +65,10 @@
                 <img id="imgmao2" src="./src/img/dedo 1 hiro.png" alt="">
             </button>
         </div>
-
+        
+        <!-- Botões de transferência de dedos e mensagens -> vez; selecione o alvo-->
         <div>
+            <!-- Botões de transferência de dedos [Player 2] -->
             <div class="mensagem" id="divjogada2" hidden>
                 <p id="avisojogada2"></p>
                 <button class="btn-hands" id="botaotransferir2-1" hidden disabled>1</button>
@@ -75,10 +78,12 @@
                 <button class="btn-hands" id="botaotransferir2-5" hidden disabled>5</button>
             </div>
 
+            <!-- Mensagens -> vez; selecione o alvo -->
             <div class="mensagem" id="divturno">
                 <p id="avisoturno"></p>
             </div>
 
+            <!-- Botões de transferência de dedos [Player 1]-->
             <div class="mensagem" id="divjogada" hidden>
                 <p id="avisojogada"></p>
                 <button class="btn-hands" id="botaotransferir1" hidden disabled>1</button>
@@ -88,7 +93,7 @@
                 <button class="btn-hands" id="botaotransferir5" hidden disabled>5</button>
             </div>
         </div>
-
+        
         <!-- Coluna 2 - Mãos direitas -->
         <div class="columns-hands" id="column-2_right-hands">
             <button href="" class="maos" id="mao4">
@@ -100,7 +105,7 @@
         </div>
 
 
-            <button id="vestiario"><img src="./src/img/iconevestiario.png" alt=""></button>
+            <button id="vestiario"><img src="./src/img/iconevestiario.png" alt=""></button> <!-- Botão que mostra as Skins -->
 
         <!-- Skins - Player (cima) -->
         <div id="suprema">
