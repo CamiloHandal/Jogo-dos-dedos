@@ -51,7 +51,7 @@ header h3 {
     display: flex;
     align-items: center;
     justify-content: right;
-    gap: 0.5vw;
+    gap: -1vw;
     margin: 0vh 0vw 0vh 9vw;
 }
 
