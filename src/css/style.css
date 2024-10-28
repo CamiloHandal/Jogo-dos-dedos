@@ -59,6 +59,27 @@ header > button:last-child {
     color: white;
 }
 
+.outrosmodos{
+    width: 10%px;
+    position: absolute;
+    margin-left: 65vw;
+    margin-top:73vh ;
+   
+    
+
+}
+#dobro{
+    width: 10vh;
+    margin-right: 00vh;
+
+}
+
+#classic{
+    width: 10vh;
+    margin-left: 33vh;
+}
+
+
 /* JOGO */
 main {
     background-color: aliceblue;
