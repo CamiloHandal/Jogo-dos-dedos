@@ -190,6 +190,254 @@ main {
 
 }
 
+/* Posições imagem animation */
+#img-animation {
+    position: absolute;
+    height: 40vh;
+    z-index: 1000;
+}
+.position-img-animation-mao1 {
+    left: 55.5vw;
+    top: 160vh;
+}
+.position-img-animation-mao2 {
+    left: 25vw;
+    top: 160vh;
+}
+.position-img-animation-mao3 {
+    left: 25vw;
+    top: 100vh;
+    transform: rotateZ(180deg);
+}
+.position-img-animation-mao4 {
+    left: 55.5vw;
+    top: 100vh;
+    transform: rotateZ(180deg);
+}
+
+/* Animação Imagem */
+@keyframes moveBottomToTop_Reto {
+    0%{
+        transform: translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateY(-60vh) rotateZ(360deg);
+    }
+}
+@keyframes moveTopToBottom_Reto {
+    0%{
+        transform: translateY(0) rotateZ(180deg);
+    }
+    100%{
+        transform: translateY(60vh) rotateZ(540deg);
+    }
+}
+.move1To4, .move2To3 {
+    animation: moveBottomToTop_Reto 0.75s ease-in-out forwards;
+}
+.move3To2, .move4To1 {
+    animation: moveTopToBottom_Reto 0.75s ease-in-out forwards;
+}
+
+
+
+@keyframes moveBottomToTop_Diagonal-mao3 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(-30.5vw) translateY(-60vh) rotateZ(360deg);
+    }
+}
+@keyframes moveBottomToTop_Diagonal-mao4 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(30.5vw) translateY(-60vh) rotateZ(360deg);
+    }
+}
+
+@keyframes moveTopToBottom_Diagonal-mao2 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180deg);
+    }
+    100%{
+        transform: translateX(-30.5vw) translateY(60vh) rotateZ(540deg);
+    }
+}
+@keyframes moveTopToBottom_Diagonal-mao1 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180deg);
+    }
+    100%{
+        transform: translateX(30.5vw) translateY(60vh) rotateZ(540deg);
+    }
+}
+
+.move1To3 {
+    animation: moveBottomToTop_Diagonal-mao3 0.75s ease-in-out forwards;
+}
+.move2To4 {
+    animation: moveBottomToTop_Diagonal-mao4 0.75s ease-in-out forwards;
+}
+
+.move3To1 {
+    animation: moveTopToBottom_Diagonal-mao1 0.75s ease-in-out forwards;
+}
+.move4To2 {
+    animation: moveTopToBottom_Diagonal-mao2 0.75s ease-in-out forwards;
+}
+
+/* Repingada Boleana [skin1 -> Player 1] */
+@keyframes bolaLeftBottom-skin1 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(-60vw) translateY(40vh) rotateZ(360deg);
+    }
+}
+@keyframes bolaRightBottom-skin1 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(66vw) translateY(33vh) rotateZ(360deg);
+    }
+}
+
+@keyframes bolaLeftTop-skin1 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(-46vw) translateY(-45vh) rotateZ(360deg);
+    }
+}
+@keyframes bolaRightTop-skin1 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(46vw) translateY(-65vh) rotateZ(360deg);
+    }
+}
+
+@keyframes bolaTopmao3-skin1 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(16vw) translateY(-80vh) rotateZ(360deg);
+    }
+}
+@keyframes bolaTopmao4-skin1 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(0);
+    }
+    100%{
+        transform: translateX(-16vw) translateY(-80vh) rotateZ(360deg);
+    }
+}
+
+.bolaLeftBottom-skin1 {
+    animation: bolaLeftBottom-skin1 0.75s ease-in-out forwards;
+}
+.bolaRightBottom-skin1 {
+    animation: bolaRightBottom-skin1 0.75s ease-in-out forwards;
+}
+
+.bolaLeftTop-skin1 {
+    animation: bolaLeftTop-skin1 0.75s ease-in-out forwards;
+}
+.bolaRightTop-skin1 {
+    animation: bolaRightTop-skin1 0.75s ease-in-out forwards;
+}
+
+.bolaTopmao3-skin1 {
+    animation: bolaTopmao3-skin1 0.75s ease-in-out forwards;
+}
+.bolaTopmao4-skin1 {
+    animation: bolaTopmao4-skin1 0.75s ease-in-out forwards;
+}
+
+/* Repingada Boleana [skin2 -> Player 2 */
+@keyframes bolaLeftBottom-skin2 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180);
+    }
+    100%{
+        transform: translateX(60vw) translateY(-40vh) rotateZ(580deg);
+    }
+}
+@keyframes bolaRightBottom-skin2 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180);
+    }
+    100%{
+        transform: translateX(-66vw) translateY(-33vh) rotateZ(580deg);
+    }
+}
+
+@keyframes bolaLeftTop-skin2 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180);
+    }
+    100%{
+        transform: translateX(46vw) translateY(45vh) rotateZ(580deg);
+    }
+}
+@keyframes bolaRightTop-skin2 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180);
+    }
+    100%{
+        transform: translateX(-46vw) translateY(65vh) rotateZ(580deg);
+    }
+}
+
+@keyframes bolaBottommao1-skin2 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180);
+    }
+    100%{
+        transform: translateX(16vw) translateY(80vh) rotateZ(580deg);
+    }
+}
+@keyframes bolaBottommao2-skin2 {
+    0%{
+        transform: translateX(0) translateY(0) rotateZ(180);
+    }
+    100%{
+        transform: translateX(-16vw) translateY(80vh) rotateZ(580deg);
+    }
+}
+
+.bolaLeftBottom-skin2 {
+    animation: bolaLeftBottom-skin2 0.75s ease-in-out forwards;
+}
+.bolaRightBottom-skin2 {
+    animation: bolaRightBottom-skin2 0.75s ease-in-out forwards;
+}
+
+.bolaLeftTop-skin2 {
+    animation: bolaLeftTop-skin2 0.75s ease-in-out forwards;
+}
+.bolaRightTop-skin2 {
+    animation: bolaRightTop-skin2 0.75s ease-in-out forwards;
+}
+
+.bolaBottommao1-skin2 {
+    animation: bolaBottommao1-skin2 0.75s ease-in-out forwards;
+}
+.bolaBottommao2-skin2 {
+    animation: bolaBottommao2-skin2 0.75s ease-in-out forwards;
+}
+
+/* =========================================== XXXX =========================================== */
+
+
 /* REGRAS */
 footer {
     height: 100vh;
