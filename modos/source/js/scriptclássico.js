@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const source = document.getElementById("sourceMusica");
     // Lista de músicas
     const musicas = [
-        "../../../src/aud/lobby-classic-game.mp3",
-        "../../../src/aud/answer_30sec.mp3",
-        "../../../src/aud/alt02-answer_030sec.mp3",
-        "../../../src/aud/alt03-answer_030sec.mp3",
-        "../../../src/aud/alt02-answer_060sec.mp3"
+        "https://github.com/CamiloHandal/Jogo-dos-dedos/blob/main/src/aud/lobby-classic-game.mp3",
+        "https://github.com/CamiloHandal/Jogo-dos-dedos/blob/main/src/aud/answer_30sec.mp3",
+        "https://github.com/CamiloHandal/Jogo-dos-dedos/blob/main/src/aud/alt03-answer_030sec.mp3",
+        "https://github.com/CamiloHandal/Jogo-dos-dedos/blob/main/src/aud/alt02-answer_030sec.mp3",
+        "https://github.com/CamiloHandal/Jogo-dos-dedos/blob/main/src/aud/alt02-answer_060sec.mp3"
     ];
 
     // Índice atual da música
@@ -125,11 +125,11 @@ let proxydedos = new Proxy(dedos, {
     }
 })
 
-let skinhiro = ["../../../src/img/dedo 0 hiro.png","../../../src/img/dedo 1 hiro.png","../../../src/img/dedo 2 hiro.png","../../../src/img/dedo 3 hiro.png","../../../src/img/dedo 4 hiro.png","../../../src/img/dedo 5 hiro.png"]
+let skinhiro = ["https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%200%20hiro.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%201%20hiro.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%202%20hiro.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%203%20hiro.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%204%20hiro.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%205%20hiro.png"]
 
-let skincamilo = ["../../../src/img/dedo 0 camilo.png","../../../src/img/dedo 1 camilo.png","../../../src/img/dedo 2 camilo.png","../../../src/img/dedo 3 camilo.png","../../../src/img/dedo 4 camilo.png","../../../src/img/dedo 5 camilo.png"]
+let skincamilo = ["https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%200%20camilo.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%201%20camilo.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%202%20camilo.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%203%20camilo.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%204%20camilo.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%205%20camilo.png"]
 
-let skinbilibio = ["../../../src/img/dedo 0 bilibio.png","../../../src/img/dedo 1 bilibio.png","../../../src/img/dedo 2 bilibio.png","../../../src/img/dedo 3 bilibio.png","../../../src/img/dedo 4 bilibio.png","../../../src/img/dedo 5 bilibio.png"]
+let skinbilibio = ["https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%200%20bilibio.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%201%20bilibio.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%202%20bilibio.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%203%20bilibio.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%204%20bilibio.png","https://raw.githubusercontent.com/CamiloHandal/Jogo-dos-dedos/refs/heads/main/src/img/dedo%205%20bilibio.png"]
 
 let skins = [skinhiro, skinbilibio, skincamilo]
 
