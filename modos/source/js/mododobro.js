@@ -1087,7 +1087,7 @@ botaomao1.removeEventListener("click", ação4pra1)
 const imgAnimation = document.getElementById('img-animation');
 
 function ação1pra3() {
-proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3
+proxydedos.dedos3 = (proxydedos.dedos1)*2 + proxydedos.dedos3
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação1pra3)
@@ -1149,7 +1149,7 @@ proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3
             }
         }
 function ação1pra4() {
-proxydedos.dedos4 = proxydedos.dedos1 + proxydedos.dedos4
+proxydedos.dedos4 = (proxydedos.dedos1)*2 + proxydedos.dedos4
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação1pra3)
@@ -1212,7 +1212,7 @@ proxydedos.dedos4 = proxydedos.dedos1 + proxydedos.dedos4
         }
 
 function ação2pra3() {
-proxydedos.dedos3 = proxydedos.dedos2 + proxydedos.dedos3
+proxydedos.dedos3 = (proxydedos.dedos2)*2 + proxydedos.dedos3
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação2pra3)
@@ -1274,7 +1274,7 @@ proxydedos.dedos3 = proxydedos.dedos2 + proxydedos.dedos3
             }
         }
 function ação2pra4() {
-proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
+proxydedos.dedos4 = (proxydedos.dedos2)*2 + proxydedos.dedos4
             console.log("somou!")
             proxyTurno.valor=2
             botaomao3.removeEventListener("click", ação2pra3)
@@ -1337,7 +1337,7 @@ proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
         }
 
 function ação3pra1() {
-proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos3
+proxydedos.dedos1 = proxydedos.dedos1 + 2*(proxydedos.dedos3)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação3pra1)
@@ -1400,7 +1400,7 @@ proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos3
         }
 
 function ação3pra2() {
-proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
+proxydedos.dedos2 = proxydedos.dedos2 + 2*(proxydedos.dedos3)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação3pra1)
@@ -1463,7 +1463,7 @@ proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
         }
 
 function ação4pra1() {
-proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos4
+proxydedos.dedos1 = proxydedos.dedos1 + 2*(proxydedos.dedos4)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação4pra1)
@@ -1525,7 +1525,7 @@ proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos4
             }
 }
 function ação4pra2() {
-proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos4
+proxydedos.dedos2 = proxydedos.dedos2 + 2*(proxydedos.dedos4)
             console.log("somou!")
             proxyTurno.valor=1
             botaomao1.removeEventListener("click", ação4pra1)
