@@ -1082,11 +1082,13 @@ proxydedos.dedos3 = proxydedos.dedos1 + proxydedos.dedos3
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete3')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move1To3');
                         imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.classList.remove('sorvete3');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 
@@ -1142,11 +1144,13 @@ proxydedos.dedos4 = proxydedos.dedos1 + proxydedos.dedos4
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete4')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move1To4');
                         imgAnimation.classList.remove('position-img-animation-mao1');
+                        imgAnimation.classList.remove('sorvete4');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 
@@ -1203,11 +1207,13 @@ proxydedos.dedos3 = proxydedos.dedos2 + proxydedos.dedos3
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete3')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move2To3');
                         imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.classList.remove('sorvete3');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 
@@ -1263,11 +1269,13 @@ proxydedos.dedos4 = proxydedos.dedos2 + proxydedos.dedos4
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete4')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move2To4');
                         imgAnimation.classList.remove('position-img-animation-mao2');
+                        imgAnimation.classList.remove('sorvete4');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 
@@ -1324,11 +1332,13 @@ proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos3
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete1')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move3To1');
                         imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.classList.remove('sorvete1');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 
@@ -1385,11 +1395,13 @@ proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos3
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete2')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move3To2');
                         imgAnimation.classList.remove('position-img-animation-mao3');
+                        imgAnimation.classList.remove('sorvete2');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 
@@ -1446,11 +1458,13 @@ proxydedos.dedos1 = proxydedos.dedos1 + proxydedos.dedos4
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete1')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move4To1');
                         imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.classList.remove('sorvete1');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 
@@ -1506,11 +1520,13 @@ proxydedos.dedos2 = proxydedos.dedos2 + proxydedos.dedos4
                 imgAnimation.hidden = false;
                 setTimeout(() => {
                     imgAnimation.src = 'https://w7.pngwing.com/pngs/909/209/png-transparent-ice-cream-cones-dondurma-sticker-ice-cream-melt-frozen-dessert-wafer-eye-thumbnail.png'
+                    imgAnimation.classList.add('sorvete2')
                     setTimeout(() => {
                         imgAnimation.classList.remove('move4To2');
                         imgAnimation.classList.remove('position-img-animation-mao4');
+                        imgAnimation.classList.remove('sorvete2');
                         imgAnimation.hidden = true;
-                    }, 500);
+                    }, 750);
                 }, 800);
             }
 

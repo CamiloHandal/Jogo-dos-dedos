@@ -435,6 +435,37 @@ main {
     animation: bolaBottommao2-skin2 0.75s ease-in-out forwards;
 }
 
+@keyframes sorvetes {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+.sorvete1 {
+    animation: sorvetes 0.75s ease-in forwards;
+    left: 55.5vw;
+    top: 160vh;
+}
+.sorvete2 {
+    animation: sorvetes 0.75s ease-in forwards;
+    left: 25vw;
+    top: 160vh;
+}
+.sorvete3 {
+    animation: sorvetes 0.75s ease-in forwards;
+    left: 25vw;
+    top: 100vh;
+    transform: rotateZ(180deg);
+}
+.sorvete4 {
+    animation: sorvetes 0.75s ease-in forwards;
+    left: 55.5vw;
+    top: 100vh;
+    transform: rotateZ(180deg);
+}
+
 /* =========================================== XXXX =========================================== */
 
 
