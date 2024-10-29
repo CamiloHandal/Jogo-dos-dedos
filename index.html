@@ -54,7 +54,7 @@
 
     <!--================================================================ JOGO ================================================================-->
     <main id="Game">
-
+        <img src="" alt="" id="img-animation">
         
         <!-- Coluna 1 - Mãos esquerdas -->
         <div class="columns-hands" id="column-1_left-hands">
@@ -65,8 +65,10 @@
                 <img id="imgmao2" src="./src/img/dedo 1 hiro.png" alt="">
             </button>
         </div>
-
+        
+        <!-- Botões de transferência de dedos e mensagens -> vez; selecione o alvo-->
         <div>
+            <!-- Botões de transferência de dedos [Player 2] -->
             <div class="mensagem" id="divjogada2" hidden>
                 <p id="avisojogada2"></p>
                 <button class="btn-hands" id="botaotransferir2-1" hidden disabled>1</button>
@@ -76,10 +78,12 @@
                 <button class="btn-hands" id="botaotransferir2-5" hidden disabled>5</button>
             </div>
 
+            <!-- Mensagens -> vez; selecione o alvo -->
             <div class="mensagem" id="divturno">
                 <p id="avisoturno"></p>
             </div>
 
+            <!-- Botões de transferência de dedos [Player 1]-->
             <div class="mensagem" id="divjogada" hidden>
                 <p id="avisojogada"></p>
                 <button class="btn-hands" id="botaotransferir1" hidden disabled>1</button>
@@ -101,7 +105,7 @@
         </div>
 
 
-            <button id="vestiario"><img src="./src/img/iconevestiario.png" alt=""></button>
+            <button id="vestiario"><img src="./src/img/iconevestiario.png" alt=""></button> <!-- Botão que mostra as Skins -->
 
         <!-- Skins - Player (cima) -->
         <div id="suprema">
